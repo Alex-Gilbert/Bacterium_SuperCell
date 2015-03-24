@@ -1,0 +1,478 @@
+fileFormatVersion: 2
+guid: e9a24ef897573d245b318c1c6c20d23b
+timeCreated: 1426807550
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BN_Back_Ankle
+    100002: BN_Back_Foot
+    100004: BN_Back_Shin
+    100006: BN_Back_Shin_2
+    100008: BN_Back_Thigh
+    100010: BN_Head
+    100012: BN_Hip
+    100014: BN_L_Ankle
+    100016: BN_L_Foot
+    100018: BN_L_Shin
+    100020: BN_L_Shin_2
+    100022: BN_L_Thigh
+    100024: BN_Neck
+    100026: BN_Neck_Base
+    100028: BN_R_Ankle
+    100030: BN_R_Foot
+    100032: BN_R_Shin
+    100034: BN_R_Shin_2
+    100036: BN_R_Thigh
+    100038: BN_Spine__01
+    100040: BN_Spine__02
+    100042: BN_Spine__03
+    100044: Boss_Mold Spore Character
+    100046: //RootNode
+    100048: CN_Back_Foot
+    100050: CN_Back_Foot 1
+    100052: CN_Back_Heel
+    100054: CN_Head
+    100056: CN_Hip
+    100058: CN_L_Foot
+    100060: CN_L_Heel
+    100062: CN_L_Toe_Bend
+    100064: CN_Neck
+    100066: CN_R_Foot
+    100068: CN_R_Heel
+    100070: CN_R_Toe_Bend
+    100072: CN_Spine_01
+    100074: CN_Spine_03
+    100076: CN_Spine_O@
+    100078: CN_World
+    100080: IK _Back_Ball_Foot
+    100082: IK _Back_Foot
+    100084: IK _Back_Toe
+    100086: IK _L_Ball_Foot
+    100088: IK _R_Ball_Foot
+    100090: IK _R_Foot
+    100092: IK _R_Toe
+    100094: IK_L_Foot
+    100096: IK_L_Toe
+    100098: leg017
+    100100: leg018
+    100102: leg019
+    100104: ND_Back_Foot_end
+    100106: ND_Head
+    100108: ND_L_Foot_End
+    100110: ND_R_Foot_End
+    100112: Sphere008
+    100114: Sphere009
+    400000: BN_Back_Ankle
+    400002: BN_Back_Foot
+    400004: BN_Back_Shin
+    400006: BN_Back_Shin_2
+    400008: BN_Back_Thigh
+    400010: BN_Head
+    400012: BN_Hip
+    400014: BN_L_Ankle
+    400016: BN_L_Foot
+    400018: BN_L_Shin
+    400020: BN_L_Shin_2
+    400022: BN_L_Thigh
+    400024: BN_Neck
+    400026: BN_Neck_Base
+    400028: BN_R_Ankle
+    400030: BN_R_Foot
+    400032: BN_R_Shin
+    400034: BN_R_Shin_2
+    400036: BN_R_Thigh
+    400038: BN_Spine__01
+    400040: BN_Spine__02
+    400042: BN_Spine__03
+    400044: Boss_Mold Spore Character
+    400046: //RootNode
+    400048: CN_Back_Foot
+    400050: CN_Back_Foot 1
+    400052: CN_Back_Heel
+    400054: CN_Head
+    400056: CN_Hip
+    400058: CN_L_Foot
+    400060: CN_L_Heel
+    400062: CN_L_Toe_Bend
+    400064: CN_Neck
+    400066: CN_R_Foot
+    400068: CN_R_Heel
+    400070: CN_R_Toe_Bend
+    400072: CN_Spine_01
+    400074: CN_Spine_03
+    400076: CN_Spine_O@
+    400078: CN_World
+    400080: IK _Back_Ball_Foot
+    400082: IK _Back_Foot
+    400084: IK _Back_Toe
+    400086: IK _L_Ball_Foot
+    400088: IK _R_Ball_Foot
+    400090: IK _R_Foot
+    400092: IK _R_Toe
+    400094: IK_L_Foot
+    400096: IK_L_Toe
+    400098: leg017
+    400100: leg018
+    400102: leg019
+    400104: ND_Back_Foot_end
+    400106: ND_Head
+    400108: ND_L_Foot_End
+    400110: ND_R_Foot_End
+    400112: Sphere008
+    400114: Sphere009
+    4300000: Sphere008
+    4300002: Sphere009
+    4300004: leg017
+    4300006: leg018
+    4300008: leg019
+    7400000: Idle
+    7400002: Walk
+    9500000: //RootNode
+    13700000: leg017
+    13700002: leg018
+    13700004: leg019
+    13700006: Sphere008
+    13700008: Sphere009
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: .600000024
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BN_Hip
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh/BN_Back_Shin
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh/BN_Back_Shin/BN_Back_Shin_2
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh/BN_Back_Shin/BN_Back_Shin_2/BN_Back_Ankle
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh/BN_Back_Shin/BN_Back_Shin_2/BN_Back_Ankle/BN_Back_Foot
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh/BN_Back_Shin/BN_Back_Shin_2/BN_Back_Ankle/BN_Back_Foot/ND_Back_Foot_end
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh/BN_L_Shin
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh/BN_L_Shin/BN_L_Shin_2
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh/BN_L_Shin/BN_L_Shin_2/BN_L_Ankle
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh/BN_L_Shin/BN_L_Shin_2/BN_L_Ankle/BN_L_Foot
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh/BN_L_Shin/BN_L_Shin_2/BN_L_Ankle/BN_L_Foot/ND_L_Foot_End
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh/BN_R_Shin
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh/BN_R_Shin/BN_R_Shin_2
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh/BN_R_Shin/BN_R_Shin_2/BN_R_Ankle
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh/BN_R_Shin/BN_R_Shin_2/BN_R_Ankle/BN_R_Foot
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh/BN_R_Shin/BN_R_Shin_2/BN_R_Ankle/BN_R_Foot/ND_R_Foot_End
+        weight: 1
+      - path: BN_Hip/BN_Spine__01
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02/BN_Spine__03
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02/BN_Spine__03/BN_Neck_Base
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02/BN_Spine__03/BN_Neck_Base/BN_Neck
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02/BN_Spine__03/BN_Neck_Base/BN_Neck/BN_Head
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02/BN_Spine__03/BN_Neck_Base/BN_Neck/BN_Head/ND_Head
+        weight: 1
+      - path: Boss_Mold Spore Character
+        weight: 1
+      - path: Boss_Mold Spore Character/leg017
+        weight: 1
+      - path: Boss_Mold Spore Character/leg018
+        weight: 1
+      - path: Boss_Mold Spore Character/leg019
+        weight: 1
+      - path: Boss_Mold Spore Character/Sphere008
+        weight: 1
+      - path: Boss_Mold Spore Character/Sphere009
+        weight: 1
+      - path: CN_World
+        weight: 1
+      - path: CN_World/CN_Back_Foot
+        weight: 1
+      - path: CN_World/CN_Back_Foot/CN_Back_Foot 1
+        weight: 1
+      - path: CN_World/CN_Back_Foot/CN_Back_Foot 1/IK _Back_Ball_Foot
+        weight: 1
+      - path: CN_World/CN_Back_Foot/CN_Back_Foot 1/IK _Back_Toe
+        weight: 1
+      - path: CN_World/CN_Back_Foot/CN_Back_Heel
+        weight: 1
+      - path: CN_World/CN_Back_Foot/CN_Back_Heel/IK _Back_Foot
+        weight: 1
+      - path: CN_World/CN_Hip
+        weight: 1
+      - path: CN_World/CN_Hip/CN_Spine_01
+        weight: 1
+      - path: CN_World/CN_Hip/CN_Spine_01/CN_Spine_O@
+        weight: 1
+      - path: CN_World/CN_Hip/CN_Spine_01/CN_Spine_O@/CN_Spine_03
+        weight: 1
+      - path: CN_World/CN_Hip/CN_Spine_01/CN_Spine_O@/CN_Spine_03/CN_Neck
+        weight: 1
+      - path: CN_World/CN_Hip/CN_Spine_01/CN_Spine_O@/CN_Spine_03/CN_Neck/CN_Head
+        weight: 1
+      - path: CN_World/CN_L_Foot
+        weight: 1
+      - path: CN_World/CN_L_Foot/CN_L_Heel
+        weight: 1
+      - path: CN_World/CN_L_Foot/CN_L_Heel/IK_L_Foot
+        weight: 1
+      - path: CN_World/CN_L_Foot/CN_L_Toe_Bend
+        weight: 1
+      - path: CN_World/CN_L_Foot/CN_L_Toe_Bend/IK _L_Ball_Foot
+        weight: 1
+      - path: CN_World/CN_L_Foot/CN_L_Toe_Bend/IK_L_Toe
+        weight: 1
+      - path: CN_World/CN_R_Foot
+        weight: 1
+      - path: CN_World/CN_R_Foot/CN_R_Heel
+        weight: 1
+      - path: CN_World/CN_R_Foot/CN_R_Heel/IK _R_Foot
+        weight: 1
+      - path: CN_World/CN_R_Foot/CN_R_Toe_Bend
+        weight: 1
+      - path: CN_World/CN_R_Foot/CN_R_Toe_Bend/IK _R_Ball_Foot
+        weight: 1
+      - path: CN_World/CN_R_Foot/CN_R_Toe_Bend/IK _R_Toe
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: BN_Hip
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh/BN_Back_Shin
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh/BN_Back_Shin/BN_Back_Shin_2
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh/BN_Back_Shin/BN_Back_Shin_2/BN_Back_Ankle
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh/BN_Back_Shin/BN_Back_Shin_2/BN_Back_Ankle/BN_Back_Foot
+        weight: 1
+      - path: BN_Hip/BN_Back_Thigh/BN_Back_Shin/BN_Back_Shin_2/BN_Back_Ankle/BN_Back_Foot/ND_Back_Foot_end
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh/BN_L_Shin
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh/BN_L_Shin/BN_L_Shin_2
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh/BN_L_Shin/BN_L_Shin_2/BN_L_Ankle
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh/BN_L_Shin/BN_L_Shin_2/BN_L_Ankle/BN_L_Foot
+        weight: 1
+      - path: BN_Hip/BN_L_Thigh/BN_L_Shin/BN_L_Shin_2/BN_L_Ankle/BN_L_Foot/ND_L_Foot_End
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh/BN_R_Shin
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh/BN_R_Shin/BN_R_Shin_2
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh/BN_R_Shin/BN_R_Shin_2/BN_R_Ankle
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh/BN_R_Shin/BN_R_Shin_2/BN_R_Ankle/BN_R_Foot
+        weight: 1
+      - path: BN_Hip/BN_R_Thigh/BN_R_Shin/BN_R_Shin_2/BN_R_Ankle/BN_R_Foot/ND_R_Foot_End
+        weight: 1
+      - path: BN_Hip/BN_Spine__01
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02/BN_Spine__03
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02/BN_Spine__03/BN_Neck_Base
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02/BN_Spine__03/BN_Neck_Base/BN_Neck
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02/BN_Spine__03/BN_Neck_Base/BN_Neck/BN_Head
+        weight: 1
+      - path: BN_Hip/BN_Spine__01/BN_Spine__02/BN_Spine__03/BN_Neck_Base/BN_Neck/BN_Head/ND_Head
+        weight: 1
+      - path: Boss_Mold Spore Character
+        weight: 1
+      - path: Boss_Mold Spore Character/leg017
+        weight: 1
+      - path: Boss_Mold Spore Character/leg018
+        weight: 1
+      - path: Boss_Mold Spore Character/leg019
+        weight: 1
+      - path: Boss_Mold Spore Character/Sphere008
+        weight: 1
+      - path: Boss_Mold Spore Character/Sphere009
+        weight: 1
+      - path: CN_World
+        weight: 1
+      - path: CN_World/CN_Back_Foot
+        weight: 1
+      - path: CN_World/CN_Back_Foot/CN_Back_Foot 1
+        weight: 1
+      - path: CN_World/CN_Back_Foot/CN_Back_Foot 1/IK _Back_Ball_Foot
+        weight: 1
+      - path: CN_World/CN_Back_Foot/CN_Back_Foot 1/IK _Back_Toe
+        weight: 1
+      - path: CN_World/CN_Back_Foot/CN_Back_Heel
+        weight: 1
+      - path: CN_World/CN_Back_Foot/CN_Back_Heel/IK _Back_Foot
+        weight: 1
+      - path: CN_World/CN_Hip
+        weight: 1
+      - path: CN_World/CN_Hip/CN_Spine_01
+        weight: 1
+      - path: CN_World/CN_Hip/CN_Spine_01/CN_Spine_O@
+        weight: 1
+      - path: CN_World/CN_Hip/CN_Spine_01/CN_Spine_O@/CN_Spine_03
+        weight: 1
+      - path: CN_World/CN_Hip/CN_Spine_01/CN_Spine_O@/CN_Spine_03/CN_Neck
+        weight: 1
+      - path: CN_World/CN_Hip/CN_Spine_01/CN_Spine_O@/CN_Spine_03/CN_Neck/CN_Head
+        weight: 1
+      - path: CN_World/CN_L_Foot
+        weight: 1
+      - path: CN_World/CN_L_Foot/CN_L_Heel
+        weight: 1
+      - path: CN_World/CN_L_Foot/CN_L_Heel/IK_L_Foot
+        weight: 1
+      - path: CN_World/CN_L_Foot/CN_L_Toe_Bend
+        weight: 1
+      - path: CN_World/CN_L_Foot/CN_L_Toe_Bend/IK _L_Ball_Foot
+        weight: 1
+      - path: CN_World/CN_L_Foot/CN_L_Toe_Bend/IK_L_Toe
+        weight: 1
+      - path: CN_World/CN_R_Foot
+        weight: 1
+      - path: CN_World/CN_R_Foot/CN_R_Heel
+        weight: 1
+      - path: CN_World/CN_R_Foot/CN_R_Heel/IK _R_Foot
+        weight: 1
+      - path: CN_World/CN_R_Foot/CN_R_Toe_Bend
+        weight: 1
+      - path: CN_World/CN_R_Foot/CN_R_Toe_Bend/IK _R_Ball_Foot
+        weight: 1
+      - path: CN_World/CN_R_Foot/CN_R_Toe_Bend/IK _R_Toe
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
