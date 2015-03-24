@@ -385,17 +385,20 @@ public class SC_CharacterController : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Platform")
+        /*if (collision.gameObject.tag != null)
         {
-            boolJump = true;
-        }
-        else if (collision.gameObject.tag=="Point")
-        {
-            point_count++;
-            Destroy(collision.gameObject);
-        }
-        else
-            jumpVelocity = Vector3.one * .00001f;
+            if (collision.gameObject.tag == "Platform")
+            {
+                boolJump = true;
+            }
+            else if (collision.gameObject.tag == "Point")
+            {
+                point_count++;
+                Destroy(collision.gameObject);
+            }
+        }*/
+
+        jumpVelocity = Vector3.one * .00001f;
     }
 
     #endregion
