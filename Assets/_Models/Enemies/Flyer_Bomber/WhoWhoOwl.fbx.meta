@@ -1,0 +1,1129 @@
+fileFormatVersion: 2
+guid: c328341b8d5259140aa4a220ad3f7b3e
+labels:
+- Blender
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Body
+    100004: RootBone
+    100006: //RootNode
+    100008: WhoWhoOwl
+    100010: WingBase.L
+    100012: WingBase.R
+    100014: WingTip.L
+    100016: WingTip.L_end
+    100018: WingTip.R
+    100020: WingTip.R_end
+    100022: Cube.001
+    100024: WhoWhoOwlMark
+    400000: Armature
+    400002: Body
+    400004: RootBone
+    400006: //RootNode
+    400008: WhoWhoOwl
+    400010: WingBase.L
+    400012: WingBase.R
+    400014: WingTip.L
+    400016: WingTip.L_end
+    400018: WingTip.R
+    400020: WingTip.R_end
+    400022: Cube.001
+    400024: WhoWhoOwlMark
+    2300000: Cube.001
+    2300002: WhoWhoOwlMark
+    3300000: Cube.001
+    3300002: WhoWhoOwlMark
+    4300000: WhoWhoOwl
+    4300002: Cube.001
+    4300004: WhoWhoOwlMark
+    7400000: Armature|BeakAttack
+    7400002: Armature|Default
+    7400004: Armature|DodgeLeft
+    7400006: Armature|DodgeRight
+    7400008: Armature|FaintOnFlight
+    7400010: Armature|FaintOnGround
+    7400012: Armature|Fly
+    7400014: Armature|FlyFast
+    7400016: Armature|GoDown
+    7400018: Armature|GoUp
+    7400020: Armature|HighJump
+    7400022: Armature|HitOnFlight
+    7400024: Armature|HitOnGround
+    7400026: Armature|Hop
+    7400028: Armature|HopLeft
+    7400030: Armature|HopRight
+    7400032: Armature|IdleOnFlight
+    7400034: Armature|IdleOnGround
+    7400036: Armature|LongJump
+    7400038: Armature|Nosedive
+    7400040: Armature|Threaten
+    9500000: //RootNode
+    13700000: WhoWhoOwl
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|BeakAttack
+      takeName: Armature|BeakAttack
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Default
+      takeName: Armature|Default
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|DodgeLeft
+      takeName: Armature|DodgeLeft
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|DodgeRight
+      takeName: Armature|DodgeRight
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|FaintOnFlight
+      takeName: Armature|FaintOnFlight
+      firstFrame: 0
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|FaintOnGround
+      takeName: Armature|FaintOnGround
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Fly
+      takeName: Armature|Fly
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|FlyFast
+      takeName: Armature|FlyFast
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|GoDown
+      takeName: Armature|GoDown
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|GoUp
+      takeName: Armature|GoUp
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|HighJump
+      takeName: Armature|HighJump
+      firstFrame: 0
+      lastFrame: 31
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|HitOnFlight
+      takeName: Armature|HitOnFlight
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|HitOnGround
+      takeName: Armature|HitOnGround
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Hop
+      takeName: Armature|Hop
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|HopLeft
+      takeName: Armature|HopLeft
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|HopRight
+      takeName: Armature|HopRight
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|IdleOnFlight
+      takeName: Armature|IdleOnFlight
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|IdleOnGround
+      takeName: Armature|IdleOnGround
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|LongJump
+      takeName: Armature|LongJump
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Nosedive
+      takeName: Armature|Nosedive
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|Threaten
+      takeName: Armature|Threaten
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/RootBone
+        weight: 1
+      - path: Armature/RootBone/Body
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.L/WingTip.L/WingTip.L_end
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R
+        weight: 1
+      - path: Armature/RootBone/Body/WingBase.R/WingTip.R/WingTip.R_end
+        weight: 1
+      - path: WhoWhoOwl
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .100000001
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: RootBone
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
