@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Poison_01
+  m_Shader: {fileID: 4800000, guid: a14eb4a5139d9c344b5d2ca63b3c61d6, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 5c8c0aa5a20a84211858ee4bfceb84d1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _HeightMap1
+        second:
+          m_Texture: {fileID: 2800000, guid: fd866b55cb78b4f4e9653827371d8a43, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _HeightMap2
+        second:
+          m_Texture: {fileID: 2800000, guid: fd866b55cb78b4f4e9653827371d8a43, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _MainTexMultiply
+        second: 1.14925373
+      data:
+        first:
+          name: _MainTexMoveSpeedU
+        second: .5
+      data:
+        first:
+          name: _MainTexMoveSpeedV
+        second: .5
+      data:
+        first:
+          name: _MainTexTile
+        second: 1
+      data:
+        first:
+          name: _HeightMapTile
+        second: 1
+      data:
+        first:
+          name: _MainTexRefraction
+        second: .707462728
+      data:
+        first:
+          name: _HeightMapStrength
+        second: .208955213
+      data:
+        first:
+          name: _HeightMapMultiply
+        second: .056716416
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _MainTexColor
+        second: {r: 1, g: 1, b: 1, a: .550000012}

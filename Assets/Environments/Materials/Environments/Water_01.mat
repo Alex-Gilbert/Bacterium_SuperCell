@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Water_01
+  m_Shader: {fileID: 4800000, guid: 01ba5835f5c83f046b8595b8d65563fa, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: b89e80e3404834230be4fe53c3e2b995, type: 3}
+          m_Scale: {x: 5, y: 5}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: .455223858
+      data:
+        first:
+          name: _Shininess
+        second: .354582399
+      data:
+        first:
+          name: _Parallax
+        second: .0199999996
+      data:
+        first:
+          name: _InvFade
+        second: 1.61656713
+      data:
+        first:
+          name: _MainTexMultiply
+        second: 1.22388053
+      data:
+        first:
+          name: _MainTexMoveSpeedU
+        second: .141791016
+      data:
+        first:
+          name: _MainTexMoveSpeedV
+        second: -2.18656707
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: .349480957, g: .623204291, b: .742647052, a: .392156869}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .470588207, g: .470588207, b: .470588207, a: .294117659}
+      data:
+        first:
+          name: _MainTexColor
+        second: {r: 1, g: 1, b: 1, a: .392156869}
+      data:
+        first:
+          name: _EmisColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 0}
