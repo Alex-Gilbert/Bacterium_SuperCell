@@ -15,6 +15,13 @@ using System.Collections;
 public class Patrol : MonoBehaviour
 {
 	#region Variables (private)
+    [SerializeField]
+    private bool flying = false;
+    private Transform[] waypoints;
+    [SerializeField]
+    private int numOfWaypoints = 5;
+    private int waypointInt = 0;
+    private NavMeshAgent Agent;
 	
 	#endregion
 	
@@ -25,38 +32,43 @@ public class Patrol : MonoBehaviour
 	
 	
 	#region Unity event functions
+
+    /// <summary>
+    /// Use this for initialization.
+    /// </summary>
+    void Start()
+    {
+        if(flying)
+        {
+            GameObject.Find("Waypoints").GetComponent<WaypointList>().setWaypoints(out waypoints, numOfWaypoints, 1, transform.position);
+        }
+        else
+        {
+            GameObject.Find("Waypoints").GetComponent<WaypointList>().setWaypoints(out waypoints, numOfWaypoints, 0, transform.position);
+            Agent = GetComponent<NavMeshAgent>();
+        }
+    }
+
+    #endregion
+
+    #region Methods
+
+    public void Patrolling()
+    {
+        if (flying)
+            PatrolAir();
+        else PatrolGround();
+    }
 	
-	/// <summary>
-	/// Update is called once per frame.
-	/// </summary>	
-	void Update()
+	public void PatrolGround()
 	{
-		
-	}
-	
-	/// <summary>
-	/// Debugging information should be placed here.
-	/// </summary>
-	void OnDrawGizmos()
-	{
-		
-	}
-	
-	#endregion
-	
-	
-	#region Methods
-	
-	public void PatrolGround(Transform[] waypoints, ref int waypointInt)
-	{
-        NavMeshAgent Agent = GetComponent<NavMeshAgent>();
 		if (waypoints.Length == 0)
 			Debug.Log("No waypoints set!");
 		else
 		{
 			if (Vector3.Distance(transform.position, waypoints[waypointInt].position) <= 2)
 			{
-				if (waypointInt < waypoints.Length)
+				if (waypointInt < (waypoints.Length - 1))
 				waypointInt++;
 				else waypointInt = 0;
 			}
@@ -64,8 +76,9 @@ public class Patrol : MonoBehaviour
 		}
 	}
 
-	public void PatrolAir(Transform[] waypoints, ref int waypointInt, int moveSpeed)
+	public void PatrolAir()
 	{
+        float moveSpeed = 3;
 		if(waypoints.Length == 0)
 			Debug.Log ("No waypoints set!");
 		else

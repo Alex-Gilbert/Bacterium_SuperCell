@@ -784,7 +784,7 @@ public class SC_CharacterController : MonoBehaviour
         jumpKeyUp = jumpKeyPressed && !jumpIsNowPressed;
         jumpKeyPressed = jumpIsNowPressed;
 
-        bool FireisNowPressed = Input.GetAxis("FireRanged") >= 0.5f  || Input.GetMouseButton(0);
+        bool FireisNowPressed = Input.GetAxis("FireRanged") >= 0.5f  || Input.GetButton("FireRangedKey");
         fireKeyDown = !fireKeyPressed && FireisNowPressed;
         fireKeyUp = fireKeyPressed && !FireisNowPressed;
         fireKeyPressed = FireisNowPressed;

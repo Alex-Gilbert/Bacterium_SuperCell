@@ -30,25 +30,30 @@ public class SpawnBall : MonoBehaviour
     /// <summary>
     /// Use this for initialization.
     /// </summary>
-    void Start()
+    void Awake()
     {
-        life = Time.time + 4.0f;
+        life = Time.time + 20f;
+        StartCoroutine(Spawn());
     }
 
     /// <summary>
     /// Update is called once per frame.
     /// </summary>	
-    void Update()
+    void LateUpdate()
     {
         if (Time.time >= life)
-        {
-            GameObject enemy = (GameObject)Instantiate(Enemy, transform.position, transform.rotation);
-            float height = enemy.GetComponent<MeshRenderer>().bounds.extents.y;
-            temp = enemy.transform.position;
-            temp.y += height;
-            enemy.transform.position = temp;
-            Destroy(gameObject);
-        }
+            DestroyImmediate(gameObject);
+    }
+
+    IEnumerator Spawn()
+    {
+        yield return new WaitForSeconds(4f);
+        GameObject enemy = (GameObject)Instantiate(Enemy, transform.position, transform.rotation);
+        float height = enemy.GetComponent<MeshRenderer>().bounds.extents.y;
+        temp = enemy.transform.position;
+        temp.y += height;
+        enemy.transform.position = temp;
+        DestroyImmediate(gameObject);
     }
 
     /// <summary>
