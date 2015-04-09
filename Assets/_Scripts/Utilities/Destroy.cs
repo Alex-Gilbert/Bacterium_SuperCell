@@ -15,9 +15,11 @@ public class Destroy : MonoBehaviour {
 			Destroy(gameObject);
 	}
 
-    void OnCollisionEnter(Collision collider)
+    /*void OnCollisionEnter(Collision collider)
     {
         Debug.Log(collider.gameObject.tag);
-        Destroy(gameObject);
-    }
+        if(collider.gameObject.tag == "Player")
+        rigidbody.isKinematic = true;
+        //Destroy(gameObject);
+    }*/
 }
