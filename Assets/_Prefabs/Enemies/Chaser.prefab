@@ -1738,6 +1738,7 @@ GameObject:
   - 114: {fileID: 11427248}
   - 114: {fileID: 11446072}
   - 114: {fileID: 11490010}
+  - 114: {fileID: 11489796}
   m_Layer: 0
   m_Name: Chaser
   m_TagString: Chaser
@@ -2325,7 +2326,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116344}
-  m_LocalRotation: {x: .554346025, y: .178098708, z: .808681965, w: -.0837552771}
+  m_LocalRotation: {x: .554345965, y: .178098693, z: .808681846, w: -.0837552696}
   m_LocalPosition: {x: -.439841986, y: .851506591, z: -.0248942152}
   m_LocalScale: {x: .0270514227, y: .0270514302, z: .027051419}
   m_Children: []
@@ -4141,6 +4142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dodgeChance: 60
+  Sight: {fileID: 11489796}
   anim: {fileID: 9510426}
   left_collide: 0
   right_collide: 0
@@ -4196,6 +4198,19 @@ MonoBehaviour:
   left: 0
   right: 1
   back: 0
+--- !u!114 &11489796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 196056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201f80fd4f2405b47a902e3078c8ba95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoV: 110
+  distance: 12
 --- !u!114 &11490010
 MonoBehaviour:
   m_ObjectHideFlags: 1
