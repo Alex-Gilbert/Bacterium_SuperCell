@@ -16,8 +16,8 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 {
 	#region Variables (private)
 	private bool engaged = false, warned = false, ResetNeeded = false, playerAttacking = false, dead = false, Attacking = false;
-    private Vector3 vec;
-	private RaycastHit hit;
+    private float rotationSpeed = 5f;
+    private float LineOfSight;
     [SerializeField]
 	private int dodgeChance = 100;
 	private float distance, AttackInterval = 1f, NextAttack, ComboInterval = 2f;
@@ -25,6 +25,8 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 	private float minimumEngagementTime = 3f, EngagementTime = 0;
 	private NavMeshAgent Agent;
     private GameObject Player;
+    [SerializeField]
+    private EnemySight Sight;
     [SerializeField]
 	public Animator anim;
 	#endregion
@@ -46,9 +48,10 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 	{
 		Agent = GetComponent<NavMeshAgent>();
 		Player = GameObject.FindWithTag("Player");
+        LineOfSight = GetComponent<EnemySight>().distance;
 		NextAttack = 0;
 		ColorMe(Color.white);
-		//anim = GetComponentInChildren<Animator>();
+        anim.SetBool("Walk", true);
 	}
 
 	/// <summary>
@@ -86,13 +89,13 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 		distance = Vector3.Distance(Player.transform.position, transform.position);
         if (!Attacking && !dead)
         {
-            if (distance < 12)
+            if (distance < LineOfSight)
             {
-                engaged = true;
-                EngagementTime = minimumEngagementTime + Time.time;
-                playerAttacking = Input.GetButton("FireRanged") || Input.GetButton("LightAttack") || Input.GetButton("HeavyAttack");
-                if (playerAttacking)
-                    Dodge();
+                if (distance < (LineOfSight / 4) || Sight.Sighted())
+                {
+                    engaged = true;
+                    EngagementTime = minimumEngagementTime + Time.time;
+                }
             }
             else engaged = false;
 
@@ -122,11 +125,7 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 	/// <summary>
 	/// Debugging information should be placed here.
 	/// </summary>
-	void OnDrawGizmos()
-	{
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(vec, 1);
-	}
+	void OnDrawGizmos(){}
 	
 	#endregion
 	
@@ -135,8 +134,12 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 
 	void StateUpdate()
 	{
+        Quaternion rotation = Quaternion.LookRotation(Player.transform.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        playerAttacking = Input.GetButton("FireRanged") || Input.GetButton("LightAttack") || Input.GetButton("HeavyAttack");
+        if (playerAttacking)
+            Dodge();
 		ResetNeeded = true;
-		transform.LookAt(Player.transform.position);
 		if (warned)
 		{
 			Agent.Resume();
