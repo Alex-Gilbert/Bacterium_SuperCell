@@ -126,25 +126,34 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .554346025
+      objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .178098708
+      objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .808681965
+      objectReference: {fileID: 0}
+    - target: {fileID: 447964, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -.0837552771
+      objectReference: {fileID: 0}
     - target: {fileID: 11427248, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
       propertyPath: particleSystem
       value: 
       objectReference: {fileID: 1508794364}
-    - target: {fileID: 447964, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: .554345965
-      objectReference: {fileID: 0}
-    - target: {fileID: 447964, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: .178098693
-      objectReference: {fileID: 0}
-    - target: {fileID: 447964, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: .808681846
-      objectReference: {fileID: 0}
-    - target: {fileID: 447964, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: -.0837552696
+    - target: {fileID: 11439778, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
+      propertyPath: punch
+      value: 
+      objectReference: {fileID: 11464110, guid: 72ae9fa48a76db8488dfe874ef13d8b3,
+        type: 2}
+    - target: {fileID: 5470140, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
+      propertyPath: m_Constraints
+      value: 112
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a62d4eef2b043074b8991ad183043dae, type: 2}
@@ -1408,6 +1417,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1203527821}
+--- !u!1 &1938127447
+GameObject:
+  m_PrefabParentObject: {fileID: 120198, guid: 09d0285a07a102a4b9cb5ef677a6923a, type: 2}
+  m_PrefabInternal: {fileID: 136611353}
+--- !u!114 &1938127453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938127447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2beeeff22649442acb7b34fb21b706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 1854c426de2d032428606ce4f680ae92, type: 3}
 --- !u!1001 &1951038850
 Prefab:
   m_ObjectHideFlags: 0
