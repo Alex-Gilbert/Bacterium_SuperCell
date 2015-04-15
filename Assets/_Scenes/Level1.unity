@@ -96,31 +96,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 420270, guid: 09d0285a07a102a4b9cb5ef677a6923a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 223
+      value: 18.4400005
       objectReference: {fileID: 0}
     - target: {fileID: 420270, guid: 09d0285a07a102a4b9cb5ef677a6923a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 38.25
       objectReference: {fileID: 0}
     - target: {fileID: 420270, guid: 09d0285a07a102a4b9cb5ef677a6923a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 3.5
+      value: 491.179993
       objectReference: {fileID: 0}
     - target: {fileID: 420270, guid: 09d0285a07a102a4b9cb5ef677a6923a, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -.00202467688
       objectReference: {fileID: 0}
     - target: {fileID: 420270, guid: 09d0285a07a102a4b9cb5ef677a6923a, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: .952241838
       objectReference: {fileID: 0}
     - target: {fileID: 420270, guid: 09d0285a07a102a4b9cb5ef677a6923a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: .00631560013
       objectReference: {fileID: 0}
     - target: {fileID: 420270, guid: 09d0285a07a102a4b9cb5ef677a6923a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: .305272967
       objectReference: {fileID: 0}
     - target: {fileID: 420270, guid: 09d0285a07a102a4b9cb5ef677a6923a, type: 2}
       propertyPath: m_RootOrder
@@ -148,7 +148,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!154 &602157026
 TerrainCollider:
