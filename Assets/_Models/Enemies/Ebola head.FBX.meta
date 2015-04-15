@@ -1,0 +1,119 @@
+fileFormatVersion: 2
+guid: a5a52c102f7f85e499f24fba85d7a65f
+timeCreated: 1428776310
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Ebola character001
+    100002: Ebola eye002
+    100004: Ebola eye003
+    100006: Ebola Head
+    100008: //RootNode
+    100010: Ebola tooth001
+    100012: Ebola tooth003
+    100014: small tooth spline
+    100016: small_tooth_spline
+    100018: Sphere004
+    100020: Sphere005
+    100022: Sphere006
+    100024: Sphere007
+    400000: Ebola character001
+    400002: Ebola eye002
+    400004: Ebola eye003
+    400006: Ebola Head
+    400008: //RootNode
+    400010: Ebola tooth001
+    400012: Ebola tooth003
+    400014: small tooth spline
+    400016: small_tooth_spline
+    400018: Sphere004
+    400020: Sphere005
+    400022: Sphere006
+    400024: Sphere007
+    2300000: Ebola character001
+    2300002: Ebola eye002
+    2300004: Ebola eye003
+    2300006: Ebola tooth001
+    2300008: Ebola tooth003
+    2300010: Sphere004
+    2300012: Sphere005
+    2300014: Sphere006
+    2300016: Sphere007
+    3300000: Ebola character001
+    3300002: Ebola eye002
+    3300004: Ebola eye003
+    3300006: Ebola tooth001
+    3300008: Ebola tooth003
+    3300010: Sphere004
+    3300012: Sphere005
+    3300014: Sphere006
+    3300016: Sphere007
+    4300000: Ebola character001
+    4300002: Ebola tooth001
+    4300004: Ebola tooth003
+    4300006: Sphere004
+    4300008: Sphere005
+    4300010: Sphere006
+    4300012: Sphere007
+    4300014: Ebola eye003
+    4300016: Ebola eye002
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
