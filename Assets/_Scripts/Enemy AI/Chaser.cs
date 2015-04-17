@@ -20,7 +20,7 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
     private float LineOfSight;
     [SerializeField]
 	private int dodgeChance = 100;
-	private float distance, AttackInterval = 1f, NextAttack, ComboInterval = 2f;
+	private float distance, AttackInterval = 1f, NextAttack;
 	private float warningInterval = 3f, warningTime = -1f; 
 	private float minimumEngagementTime = 3f, EngagementTime = 0;
 	private NavMeshAgent Agent;
