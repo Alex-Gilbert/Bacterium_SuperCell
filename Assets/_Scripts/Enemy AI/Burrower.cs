@@ -11,8 +11,7 @@ public class Burrower : MonoBehaviour {
 	public Component leg3;
 	public Component body;
 	public Component head;
-	bool chasing = false;
-
+	public bool arrived = true;
 
 	// Use this for initialization
 	void Start () {
@@ -22,8 +21,7 @@ public class Burrower : MonoBehaviour {
 
 	IEnumerator WaitMethod() {
 		yield return new WaitForSeconds(10*Time.deltaTime);
-		chasing = true;
-	
+
 	}
 
 	void Going_underground () {
@@ -34,7 +32,7 @@ public class Burrower : MonoBehaviour {
 		head.GetComponent<Renderer> ().enabled = false;
 	}
 
-	void Going_to_player(){
+	void Going_to_ground(){
 		leg1.GetComponent<Renderer> ().enabled = true;
 		leg2.GetComponent<Renderer> ().enabled = true;
 		leg3.GetComponent<Renderer> ().enabled = true;
@@ -44,27 +42,20 @@ public class Burrower : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
 		distance = Vector3.Distance (Player.transform.position, transform.position);
-		player_position = Player.transform.position;
-		var step = 4f * Time.deltaTime;
 
-		if ((distance < 15) && (distance > 3) && ( chasing == true) ) {
-			if (visible ==true ) {
+		if ((distance < 30) && (distance > 3)) {
+			if (visible = true ){
 				Going_underground ();
-				visible=false;
+				visible = false;
 			}
-			gameObject.transform.LookAt(player_position);
-			gameObject.transform.position=Vector3.MoveTowards(transform.position, player_position,step);
+			gameObject.transform.LookAt (player_position);
+			gameObject.transform.position = Vector3.MoveTowards (transform.position, Player.transform.position, 2f * Time.deltaTime);
+		} else if (distance < 3) {
+			Going_to_ground ();
+			visible = true;
+		} 
 
-		}
-		else if ( (distance<3) && (distance > 1) && (chasing == true) ){
-			if ( visible ==false)
-				Going_to_player ();
-			chasing=false;
-			StartCoroutine (WaitMethod());
-			gameObject.transform.LookAt(player_position);
-			gameObject.transform.position=Vector3.MoveTowards(transform.position, player_position,step);
-		}	
+
 	}
 }
