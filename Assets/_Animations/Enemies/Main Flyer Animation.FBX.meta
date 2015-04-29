@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 363b5192c2c8a704cb7e8ff6c8d88c7b
+timeCreated: 1429532753
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bn_hip
+    100002: bn_spine_01
+    100004: bn_spine_02
+    100006: bn_spine_03
+    100008: bn_spine_04
+    100010: bn_wing_L_1
+    100012: bn_wing_L_2
+    100014: bn_wing_L_3
+    100016: bn_wing_L_4
+    100018: bn_wing_R_1
+    100020: bn_wing_R_2
+    100022: bn_wing_R_3
+    100024: bn_wing_R_4
+    100026: Box001
+    100028: Flyer Complete
+    100030: flying plane
+    100032: //RootNode
+    400000: bn_hip
+    400002: bn_spine_01
+    400004: bn_spine_02
+    400006: bn_spine_03
+    400008: bn_spine_04
+    400010: bn_wing_L_1
+    400012: bn_wing_L_2
+    400014: bn_wing_L_3
+    400016: bn_wing_L_4
+    400018: bn_wing_R_1
+    400020: bn_wing_R_2
+    400022: bn_wing_R_3
+    400024: bn_wing_R_4
+    400026: Box001
+    400028: Flyer Complete
+    400030: flying plane
+    400032: //RootNode
+    2300000: Box001
+    2300002: flying plane
+    3300000: Box001
+    3300002: flying plane
+    4300000: Box001
+    4300002: Flyer Complete
+    4300004: flying plane
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Flyer Complete
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bn_hip
+        weight: 1
+      - path: bn_hip/bn_spine_01
+        weight: 1
+      - path: bn_hip/bn_spine_01/bn_spine_02
+        weight: 1
+      - path: bn_hip/bn_spine_01/bn_spine_02/bn_spine_03
+        weight: 1
+      - path: bn_hip/bn_spine_01/bn_spine_02/bn_spine_03/bn_spine_04
+        weight: 1
+      - path: bn_hip/bn_wing_L_1
+        weight: 1
+      - path: bn_hip/bn_wing_L_1/bn_wing_L_2
+        weight: 1
+      - path: bn_hip/bn_wing_L_1/bn_wing_L_2/bn_wing_L_3
+        weight: 1
+      - path: bn_hip/bn_wing_L_1/bn_wing_L_2/bn_wing_L_3/bn_wing_L_4
+        weight: 1
+      - path: bn_hip/bn_wing_R_1
+        weight: 1
+      - path: bn_hip/bn_wing_R_1/bn_wing_R_2
+        weight: 1
+      - path: bn_hip/bn_wing_R_1/bn_wing_R_2/bn_wing_R_3
+        weight: 1
+      - path: bn_hip/bn_wing_R_1/bn_wing_R_2/bn_wing_R_3/bn_wing_R_4
+        weight: 1
+      - path: Box001
+        weight: 1
+      - path: Flyer Complete
+        weight: 1
+      - path: flying plane
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
