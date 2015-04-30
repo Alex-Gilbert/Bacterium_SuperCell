@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBurrower : MonoBehaviour 
+public class NewBurrower : MonoBehaviour, IKillable
 {
     private enum BurrowerState
     {
         Patrol,
-        Chase
+        Chase,
+        Dead
     }
 
     [SerializeField]
@@ -55,6 +56,8 @@ public class NewBurrower : MonoBehaviour
     bool isDigging;
 
     bool isUnderGround;
+
+    bool isDieing = false;
 
     public void Start()
     {
@@ -108,7 +111,9 @@ public class NewBurrower : MonoBehaviour
                     StartCoroutine(Chasing());
                 }
                 break;
-
+            case BurrowerState.Dead:
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+                break;
         }
     }
 
@@ -171,6 +176,7 @@ public class NewBurrower : MonoBehaviour
     IEnumerator Dig()
     {
         isDigging = true;
+        curState = BurrowerState.Dead;
         isUnderGround = true;
         agent.Stop();
         float curTime = 0;
@@ -180,7 +186,8 @@ public class NewBurrower : MonoBehaviour
         foreach (ParticleSystem ps in diggingParticles)
             ps.Play();
 
-        model.SetActive(false);
+        if(!isDieing)
+            model.SetActive(false);
         capCollider.enabled = false;
 
         yield return new WaitForSeconds(timeToDig);
@@ -193,5 +200,27 @@ public class NewBurrower : MonoBehaviour
     void EndAttack()
     {
         attackArea.EndAttack();
+    }
+
+    public void Kill()
+    {
+        if(!isDieing)
+        {
+            StopCoroutine(Chasing());
+            StopCoroutine(Dig());
+
+            isDieing = true;
+            agent.Stop();
+            anim.SetBool("Death", true);
+            model.SetActive(true);
+            attackArea.EndAttack();
+
+            foreach (ParticleSystem ps in underGroundParticles)
+                ps.Stop();
+            foreach (ParticleSystem ps in diggingParticles)
+                ps.Stop();
+
+            Destroy(gameObject, 2f);
+        }
     }
 }

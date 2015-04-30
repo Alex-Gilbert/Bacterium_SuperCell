@@ -4,8 +4,9 @@ using System.Collections;
 public class EnemyAttackArea : MonoBehaviour 
 {
     GameObject player;
-
     public PlayerAttack attackActive;
+
+
 
     public void OnTriggerEnter(Collider other)
     {
@@ -33,6 +34,7 @@ public class EnemyAttackArea : MonoBehaviour
     public void ActivateAttack(PlayerAttack attack)
     {
         attackActive = attack;
+        attackActive.Forward = transform.forward;
 
         if(player != null)
         {

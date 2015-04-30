@@ -4,7 +4,8 @@ using System.Collections;
 public enum PlayerAttackType
 {
     Melee,
-    Ranged
+    Ranged,
+    Heavy
 }
 
 public class PlayerAttack : MonoBehaviour
@@ -18,4 +19,6 @@ public class PlayerAttack : MonoBehaviour
     public int Damage { get { return damage; } }
 
     public PlayerAttackType AttackType { get { return attackType; } }
+
+    public Vector3 Forward { get; set; }
 }

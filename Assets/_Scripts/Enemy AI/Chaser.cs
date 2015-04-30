@@ -30,6 +30,11 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
     [SerializeField]
 	public Animator anim;
 
+    [SerializeField]
+    EnemyAttackArea attackArea;
+    [SerializeField]
+    PlayerAttack attack;
+
     bool isActivatingAttack = false;
 
     AnimatorStateInfo stateInfo;
@@ -54,7 +59,7 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 		Player = GameObject.FindWithTag("Player");
         LineOfSight = GetComponent<EnemySight>().distance;
 		NextAttack = 0;
-		ColorMe(Color.white);
+		ColorMe(Color.green);
         anim.SetBool("Walk", true);
 	}
 
@@ -76,7 +81,7 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 	/// </summary>
 	void Chase()
 	{
-        if (Time.time >= NextAttack && distance < 2)
+        if (Time.time >= NextAttack && distance < 8)
         {
             NextAttack = Time.time + AttackInterval;
             Attack();
@@ -148,7 +153,7 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 	{
         Quaternion rotation = Quaternion.LookRotation(Player.transform.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-        playerAttacking = Input.GetButton("FireRanged") || Input.GetButton("LightAttack") || Input.GetButton("HeavyAttack");
+        playerAttacking = Input.GetButtonDown("FireRanged") || Input.GetButtonDown("LightAttack") || Input.GetButtonDown("HeavyAttack");
         if (playerAttacking)
             Dodge();
 		ResetNeeded = true;
@@ -180,7 +185,7 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 		ResetNeeded = false;
 		Agent.Resume();
         anim.SetBool("Walk", true);
-		ColorMe(Color.white);
+		ColorMe(Color.green);
 	}
 
 	void Dodge()
@@ -216,8 +221,9 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 		Renderer[] child = GetComponentsInChildren<Renderer>();
 		for (int i = 0; i < child.Length; i++)
 		{
-			child[i].material.color = col;
+			child[i].material.SetColor("_EmissionColor", col);
 		}
+          
 	}
 	
     IEnumerator Timer()
@@ -231,10 +237,10 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
     IEnumerator ActivatingAttack()
     {
         isActivatingAttack = true;
-        yield return new WaitForSeconds(.37f);
-        print("Activate Attack");
+        yield return new WaitForSeconds(.25f);
+        attackArea.ActivateAttack(attack);
         yield return new WaitForSeconds(.33f);
-        print("End Attack");
+        attackArea.EndAttack();
         isActivatingAttack = false;
     }
 

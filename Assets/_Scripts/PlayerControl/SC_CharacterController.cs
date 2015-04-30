@@ -154,7 +154,9 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     private Vector3 jumpVelocity = Vector3.zero;
     private Vector3 amountMovedLastFrame = Vector3.zero; // the toMove of last frame
     private Vector3 relStickDir = Vector3.zero;
-    
+
+    bool isDamaged = false;
+
     //checkpoint + point system
     private float distance; //used for the checkpoint system
     private Vector3 checkpoint_forward;
@@ -211,176 +213,167 @@ public class SC_CharacterController : MonoBehaviour, IHitable
         {
             return;
         }
+
         stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         transInfo = animator.GetAnimatorTransitionInfo(0);
 
         HandleInput();
         CheckAirState();
 
-        
-
         if (landed)
         {
             hasDoubleJumped = false;
         }
 
-        if(targetKeyDown)
+        if (!isDamaged)
         {
-            StopCoroutine("TargetLogic");
-            StartCoroutine("TargetLogic");
-        }
-
-        charAngle = 0f;
-        direction = 0f;
-
-        if(gamecam.CamState != SC_ThirdPersonCamera.CamStates.FirstPerson)
-        {
-            //translate controls stick coordinates into world/cam/character space
-            StickToWorldspace(this.transform, gamecam.transform, ref direction, ref speed, ref charAngle);
-
-            if (animator)
+            if (targetKeyDown)
             {
-                animator.SetFloat("Speed", speed, speedDampTime, Time.deltaTime);
-                animator.SetFloat("Direction", direction, DirectionalDampTime, Time.deltaTime);
+                StopCoroutine("TargetLogic");
+                StartCoroutine("TargetLogic");
+            }
 
-                if (speed < LocomotionThreshold && Mathf.Abs(horizontal) < 0.05f)  //Dead Zone
+            charAngle = 0f;
+            direction = 0f;
+
+            if (gamecam.CamState != SC_ThirdPersonCamera.CamStates.FirstPerson)
+            {
+                //translate controls stick coordinates into world/cam/character space
+                StickToWorldspace(this.transform, gamecam.transform, ref direction, ref speed, ref charAngle);
+
+                if (animator)
                 {
-                    animator.SetFloat("Direction", 0f);
+                    animator.SetFloat("Speed", speed, speedDampTime, Time.deltaTime);
+                    animator.SetFloat("Direction", direction, DirectionalDampTime, Time.deltaTime);
+
+                    if (speed < LocomotionThreshold && Mathf.Abs(horizontal) < 0.05f)  //Dead Zone
+                    {
+                        animator.SetFloat("Direction", 0f);
+                    }
                 }
             }
-        }
 
-        if(!isTargeting)
-        {
-            if (jumpKeyDown && CanJump())
+            if (!isTargeting)
             {
-                //rigidbody.velocity += Vector3.up * 5.0f;
-                animator.SetBool("Jump", true);
-                StopCoroutine("JumpLogic");
-                StartCoroutine("JumpLogic");
-                audio.PlayOneShot(Jump);
+                if (jumpKeyDown && CanJump())
+                {
+                    //rigidbody.velocity += Vector3.up * 5.0f;
+                    animator.SetBool("Jump", true);
+                    StopCoroutine("JumpLogic");
+                    StartCoroutine("JumpLogic");
+                    audio.PlayOneShot(Jump);
+                }
             }
-        }
 
-        if(!IsGrounded() && !isJumping && jumpKeyDown && !hasDoubleJumped)
-        {
-            GetComponent<Rigidbody>().velocity += new Vector3(0, doubleJumpStrength - GetComponent<Rigidbody>().velocity.y, 0);
-            this.transform.LookAt(this.transform.position + (relStickDir * 1.5f));
-            jumpVelocity = this.transform.forward * moveSpeed * speed;
-            hasDoubleJumped = true;
-            animator.SetBool("DoubleJump", true);
-            audio.PlayOneShot(DoubleJump);
-            Invoke("DoubleJumpFalse", .5f);
-        }
+            if (!IsGrounded() && !isJumping && jumpKeyDown && !hasDoubleJumped)
+            {
+                GetComponent<Rigidbody>().velocity += new Vector3(0, doubleJumpStrength - GetComponent<Rigidbody>().velocity.y, 0);
+                this.transform.LookAt(this.transform.position + (relStickDir * 1.5f));
+                jumpVelocity = this.transform.forward * moveSpeed * speed;
+                hasDoubleJumped = true;
+                animator.SetBool("DoubleJump", true);
+                audio.PlayOneShot(DoubleJump);
+                Invoke("DoubleJumpFalse", .5f);
+            }
 
 
-        if (Input.GetButtonDown("LightAttack") && !isAttacking)
-        {
-            StartCoroutine("ComboAttack");
-        }
+            if (Input.GetButtonDown("LightAttack") && !isAttacking)
+            {
+                StartCoroutine("ComboAttack");
+            }
 
-        if (IsGrounded() && Input.GetButtonDown("HeavyAttack") && !isAttacking)
-        {
-            StartCoroutine("HeavyAttack");
-        }
+            if (IsGrounded() && Input.GetButtonDown("HeavyAttack") && !isAttacking)
+            {
+                StartCoroutine("HeavyAttack");
+            }
 
-        if (IsGrounded() && Input.GetButtonDown("Block") && !isAttacking)
-        {
-            StartCoroutine("Block");
-        }
+            if (IsGrounded() && Input.GetButtonDown("Block") && !isAttacking)
+            {
+                StartCoroutine("Block");
+            }
 
-        if (!IsGrounded() && !isJumping && Input.GetButtonDown("HeavyAttack") && hasDoubleJumped && !isDiveAttack)
-        {
-            StartCoroutine("DiveAttack");
-        }
+            if (!IsGrounded() && !isJumping && Input.GetButtonDown("HeavyAttack") && hasDoubleJumped && !isDiveAttack)
+            {
+                StartCoroutine("DiveAttack");
+            }
 
-        animator.SetBool("Grounded", IsGrounded());
+            animator.SetBool("Grounded", IsGrounded());
 
-        LaserPointer.enabled = isTargeting;
-        Reticule.gameObject.SetActive(isTargeting);
+            LaserPointer.enabled = isTargeting;
+            Reticule.gameObject.SetActive(isTargeting);
 
-        RaycastHit laserHitPoint = new RaycastHit();
+            RaycastHit laserHitPoint = new RaycastHit();
 
-        if(Physics.Raycast(FireRangedSpot.position, FireRangedSpot.up, out laserHitPoint, 20))
-        {
-            LaserPointer.SetPosition(0, FireRangedSpot.position);
-            LaserPointer.SetPosition(1, laserHitPoint.point);
-            Reticule.position = laserHitPoint.point;
-        }
-        else
-        {
-            LaserPointer.SetPosition(0, FireRangedSpot.position);
-            LaserPointer.SetPosition(1, FireRangedSpot.position + FireRangedSpot.up * 20);
-            Reticule.position = FireRangedSpot.position + FireRangedSpot.up * 20;
-        }
+            if (Physics.Raycast(FireRangedSpot.position, FireRangedSpot.up, out laserHitPoint, 20))
+            {
+                LaserPointer.SetPosition(0, FireRangedSpot.position);
+                LaserPointer.SetPosition(1, laserHitPoint.point);
+                Reticule.position = laserHitPoint.point;
+            }
+            else
+            {
+                LaserPointer.SetPosition(0, FireRangedSpot.position);
+                LaserPointer.SetPosition(1, FireRangedSpot.position + FireRangedSpot.up * 20);
+                Reticule.position = FireRangedSpot.position + FireRangedSpot.up * 20;
+            }
 
-        //checkpoint code
-        /*
-        distance = Vector3.Distance(checkpoint.transform.position, gameObject.transform.position);
-        if ((distance < 50) || (boolCheckpoint==false)){
-            checkpoint_vector1 = checkpoint.transform.position;
-            //checkpoint_forward = gameObject.transform.forward;
-            boolCheckpoint = true;
-        }
-        if ((gameObject.transform.position.y < -5) && (boolCheckpoint==true))
-        {
-            //StartCoroutine(Wait());
-            //gameObject.transform.LookAt(checkpoint_forward);
-            gameObject.transform.position = checkpoint_vector1;
-        }*/
-        if (boolJump == true)
-        {
-            GetComponent<Rigidbody>().velocity += new Vector3 (0,20,0);
-            boolJump = false;
+            if (boolJump == true)
+            {
+                GetComponent<Rigidbody>().velocity += new Vector3(0, 20, 0);
+                boolJump = false;
+            }
         }
     }
 
     public void FixedUpdate()
     {
-        if (gamecam.CamState != SC_ThirdPersonCamera.CamStates.FirstPerson)
+        if (!isDamaged)
         {
-            toMove = Vector3.zero;
-            if (IsGrounded() && !isJumping)
+            if (gamecam.CamState != SC_ThirdPersonCamera.CamStates.FirstPerson)
             {
-                jumpVelocity = Vector3.zero;
-                if (isTargeting)
+                toMove = Vector3.zero;
+                if (IsGrounded() && !isJumping)
                 {
-                    TargetMoveLogic();
+                    jumpVelocity = Vector3.zero;
+                    if (isTargeting)
+                    {
+                        TargetMoveLogic();
+                    }
+                    else
+                    {
+                        //reset the spine rotation
+                        ribLook.curRotation = 0;
+
+                        if (!isAttacking && !isBlocking)
+                            MoveLogic();
+                        else if (speed > .2f)
+                            this.transform.LookAt(this.transform.position + (relStickDir * 1.5f));
+                    }
+
+                    this.GetComponent<Rigidbody>().position += toMove * Time.deltaTime;
                 }
                 else
                 {
-                    //reset the spine rotation
-                    ribLook.curRotation = 0;
+                    if (jumpVelocity.x == 0 && jumpVelocity.y == 0 && jumpVelocity.z == 0)
+                        jumpVelocity.Set(amountMovedLastFrame.x, amountMovedLastFrame.y, amountMovedLastFrame.z);
 
-                    if(!isAttacking && !isBlocking)
-                        MoveLogic();
-                    else if (speed > .2f)
-                        this.transform.LookAt(this.transform.position + (relStickDir * 1.5f));
+                    AirMoveLogic();
+
+                    if (!isDiveAttack)
+                        this.GetComponent<Rigidbody>().position += jumpVelocity * Time.deltaTime;
+                    else
+                        this.GetComponent<Rigidbody>().AddForce(Vector3.down * 50, ForceMode.Acceleration);
                 }
 
-                this.GetComponent<Rigidbody>().position += toMove * Time.deltaTime;
+                float yToMove = 0;
+
+                if (jumpHeight > 0)
+                    yToMove = jumpHeight + jumpStartHeight - this.transform.position.y;
+
+                this.GetComponent<Rigidbody>().position += new Vector3(0, yToMove, 0);
+
+                amountMovedLastFrame = toMove;
             }
-            else
-            {
-                if (jumpVelocity.x == 0 && jumpVelocity.y == 0 && jumpVelocity.z == 0)
-                    jumpVelocity.Set(amountMovedLastFrame.x, amountMovedLastFrame.y, amountMovedLastFrame.z);
-
-                AirMoveLogic();
-
-                if (!isDiveAttack)
-                    this.GetComponent<Rigidbody>().position += jumpVelocity * Time.deltaTime;
-                else
-                    this.GetComponent<Rigidbody>().AddForce(Vector3.down * 50, ForceMode.Acceleration);
-            }
-
-            float yToMove = 0;
-
-            if (jumpHeight > 0)
-                yToMove = jumpHeight + jumpStartHeight - this.transform.position.y;
-
-            this.GetComponent<Rigidbody>().position += new Vector3(0, yToMove, 0);
-
-            amountMovedLastFrame = toMove;
         }
     }
 
@@ -661,7 +654,7 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     private IEnumerator HeavyAttack()
     {
         isAttacking = true;
-        
+        float curTime = 0;
         animator.SetBool("HeavyAttack", true);
 
         audio.PlayOneShot(haCharge);
@@ -669,8 +662,9 @@ public class SC_CharacterController : MonoBehaviour, IHitable
         yield return new WaitForSeconds(.25f);
         heavyAttackParticlesCharge.enableEmission = true;
 
-        while(Input.GetButton("HeavyAttack"))
+        while(Input.GetButton("HeavyAttack") || curTime < .75f)
         {
+            curTime += Time.deltaTime;
             yield return null;
         }
 
@@ -822,13 +816,35 @@ public class SC_CharacterController : MonoBehaviour, IHitable
 
     public void Hit(PlayerAttack pa)
     {
-        animator.SetBool("Damaged", true);
-        Invoke("DeathCheck", .3f);
+        if (!isDamaged)
+        {
+            animator.SetBool("Damaged", true);
+            if (pa.AttackType == PlayerAttackType.Heavy)
+                animator.SetFloat("DamageType", 1);
+            else
+                animator.SetFloat("DamageType", 0);
+
+            StartCoroutine(Damaged(pa));
+        }
+        
     }
 
-    public void DeathCheck()
+    IEnumerator Damaged(PlayerAttack pa)
     {
+        isDamaged = true;
+
+        if (pa.AttackType == PlayerAttackType.Heavy)
+            GetComponent<Rigidbody>().AddForce(pa.Forward * 1000f, ForceMode.Impulse);
+
+        while (!stateInfo.IsName("Damaged"))
+            yield return null;
+
         animator.SetBool("Damaged", false);
+
+        yield return new WaitForSeconds(stateInfo.length);
+
+        isDamaged = false;
         animator.SetBool("Dead", false);
     }
+
 }

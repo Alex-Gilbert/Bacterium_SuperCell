@@ -34,12 +34,14 @@ public class SC_FootContact : MonoBehaviour
 
     public void OnTriggerEnter(Collider collision)
     {
-        ++numOfContacts;
+        if(collision.gameObject.tag.Equals("Terrain"))
+            ++numOfContacts;
     }
 
     public void OnTriggerExit(Collider collision)
     {
-        --numOfContacts;
+        if (collision.gameObject.tag.Equals("Terrain"))
+            --numOfContacts;
     }
 
 	#endregion

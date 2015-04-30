@@ -116,6 +116,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: DamageType
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -215,6 +221,36 @@ BlendTree:
   m_BlendParameterY: Blend
   m_MinThreshold: -.75
   m_MaxThreshold: .75
+  m_UseAutomaticThresholds: 0
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
+--- !u!206 &20638320
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Blend Tree
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 6dd5b57ca7c0d48e4b3e9061e1c88d18, type: 3}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Blend
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400002, guid: c895dff4365ad4506ab680fdc4a0afb8, type: 3}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Blend
+    m_Mirror: 0
+  m_BlendParameter: DamageType
+  m_BlendParameterY: XDirection
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
@@ -597,7 +633,7 @@ AnimatorStateTransition:
   m_TransitionDuration: .220588207
   m_TransitionOffset: 0
   m_ExitTime: .779411793
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
@@ -689,7 +725,7 @@ AnimatorStateTransition:
   m_TransitionDuration: .599427998
   m_TransitionOffset: 0
   m_ExitTime: .400572032
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
@@ -1821,7 +1857,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 6dd5b57ca7c0d48e4b3e9061e1c88d18, type: 3}
+  m_Motion: {fileID: 20638320}
   m_Tag: 
 --- !u!1102 &110280480
 AnimatorState:
@@ -1987,7 +2023,7 @@ AnimatorStateMachine:
     m_Position: {x: -96, y: 108, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110277766}
-    m_Position: {x: -408, y: 312, z: 0}
+    m_Position: {x: -420, y: 336, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110269482}
     m_Position: {x: -48, y: 312, z: 0}
@@ -2015,10 +2051,10 @@ AnimatorStateMachine:
       first: {fileID: 110748854}
       second: []
     data:
-      first: {fileID: 110753658}
+      first: {fileID: 110753526}
       second: []
     data:
-      first: {fileID: 110753526}
+      first: {fileID: 110753658}
       second: []
     data:
       first: {fileID: 110761630}

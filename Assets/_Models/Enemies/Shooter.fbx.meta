@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: c4d3d02cebaf4fe4fbe7b3343b796847
-timeCreated: 1430426247
+guid: daf77dcfb5c734845a52c5688f36bdbb
+timeCreated: 1430433681
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -69,8 +69,8 @@ ModelImporter:
     400056: Armature|TopThumb_R
     400058: Camera
     400060: Lamp
-    400062: TheMobileCactus
-    400064: //RootNode
+    400062: //RootNode
+    400064: TheMobileCactus
     4300000: TheMobileCactus
     9500000: //RootNode
     13700000: TheMobileCactus
@@ -262,7 +262,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: TheMobileCactus(Clone)
+    - name: Shooter(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
