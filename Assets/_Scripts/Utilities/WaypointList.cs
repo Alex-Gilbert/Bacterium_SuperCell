@@ -112,7 +112,7 @@ public class WaypointList : MonoBehaviour
 		}
 	}
 
-    public void AlexSetWayPoints(out Transform[] waypoints, int numOfWaypoints, int type, Vector3 Position, float maxDistance, bool WantGround)
+    public void AlexSetWayPoints(out Transform[] waypoints, int numOfWaypoints, Vector3 Position, float maxDistance, bool WantGround)
     {
         Transform[] proposedArray = new Transform[numOfWaypoints];
 

@@ -47,7 +47,7 @@ public class NewSporelingAI : MonoBehaviour, IHitable, IKillable
     {
         Sporeling = GetComponent<NavMeshAgent>();
         Player = GameObject.FindWithTag("Player");
-        GameObject.Find("Waypoints").GetComponent<WaypointList>().AlexSetWayPoints(out waypoints, numOfWaypoints, 0, transform.position, 15, true);
+        GameObject.Find("Waypoints").GetComponent<WaypointList>().AlexSetWayPoints(out waypoints, numOfWaypoints, transform.position, 15, true);
         waypointInt = -1;
         projectile_hits = NumOfRangedHits;
         NextAttack = 0;

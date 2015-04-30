@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: c4d3d02cebaf4fe4fbe7b3343b796847
+timeCreated: 1430426247
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Armature|BottomThumb_L
+    100004: Armature|BottomThumb_R
+    100006: Armature|Fingers_L
+    100008: Armature|Fingers_R
+    100010: Armature|Foot_L
+    100012: Armature|Foot_R
+    100014: Armature|ForeArm_L
+    100016: Armature|Forearm_R
+    100018: Armature|Hand_L
+    100020: Armature|Hand_R
+    100022: Armature|Head
+    100024: Armature|Hip_L
+    100026: Armature|Hip_R
+    100028: Armature|InnerArm_L
+    100030: Armature|InnerArm_R
+    100032: Armature|InnerThumb_L
+    100034: Armature|InnerThumb_R
+    100036: Armature|LegBottom_L
+    100038: Armature|LegBottom_R
+    100040: Armature|LegTop_L
+    100042: Armature|LegTop_R
+    100044: Armature|Shoulder_L
+    100046: Armature|Shoulder_R
+    100048: Armature|SpineBase
+    100050: Armature|SpineMid
+    100052: Armature|SpineTop
+    100054: Armature|TopThumb_L
+    100056: Armature|TopThumb_R
+    100058: Camera
+    100060: Lamp
+    100062: //RootNode
+    100064: TheMobileCactus
+    400000: Armature
+    400002: Armature|BottomThumb_L
+    400004: Armature|BottomThumb_R
+    400006: Armature|Fingers_L
+    400008: Armature|Fingers_R
+    400010: Armature|Foot_L
+    400012: Armature|Foot_R
+    400014: Armature|ForeArm_L
+    400016: Armature|Forearm_R
+    400018: Armature|Hand_L
+    400020: Armature|Hand_R
+    400022: Armature|Head
+    400024: Armature|Hip_L
+    400026: Armature|Hip_R
+    400028: Armature|InnerArm_L
+    400030: Armature|InnerArm_R
+    400032: Armature|InnerThumb_L
+    400034: Armature|InnerThumb_R
+    400036: Armature|LegBottom_L
+    400038: Armature|LegBottom_R
+    400040: Armature|LegTop_L
+    400042: Armature|LegTop_R
+    400044: Armature|Shoulder_L
+    400046: Armature|Shoulder_R
+    400048: Armature|SpineBase
+    400050: Armature|SpineMid
+    400052: Armature|SpineTop
+    400054: Armature|TopThumb_L
+    400056: Armature|TopThumb_R
+    400058: Camera
+    400060: Lamp
+    400062: TheMobileCactus
+    400064: //RootNode
+    4300000: TheMobileCactus
+    9500000: //RootNode
+    13700000: TheMobileCactus
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Armature
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|LegTop_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|LegTop_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|LegBottom_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|LegBottom_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|Foot_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|Foot_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|SpineBase
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|SpineMid
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|Shoulder_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|Shoulder_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|InnerArm_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|InnerArm_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|ForeArm_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|Forearm_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|Hand_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Armature|Hand_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: TheMobileCactus(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Armature
+      position: {x: 0, y: 3.36201668, z: 3.02590513}
+      rotation: {x: -1, y: 0, z: 0, w: -8.42937027e-08}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Armature|SpineBase
+      position: {x: -0, y: .185694724, z: 3.21159983}
+      rotation: {x: .999985099, y: 6.5104544e-10, z: -1.19207527e-07, w: -.00546145439}
+      scale: {x: 1, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: Armature|SpineMid
+      position: {x: 8.8817842e-16, y: 1.00005937, z: -1.49011612e-08}
+      rotation: {x: -.0615746714, y: 1.1898311e-07, z: 7.34027994e-09, w: .998102486}
+      scale: {x: 1, y: .999999821, z: .999999881}
+      transformModified: 1
+    - name: Armature|SpineTop
+      position: {x: 4.23516474e-22, y: .794743657, z: -2.98023224e-08}
+      rotation: {x: .0561227798, y: 7.73662191e-15, z: -5.97340933e-15, w: .998423934}
+      scale: {x: 1, y: 1.00000024, z: 1}
+      transformModified: 1
+    - name: Armature|Head
+      position: {x: 5.61230888e-22, y: .57914114, z: -1.1775473e-08}
+      rotation: {x: .0730707571, y: -1.18890583e-07, z: -8.7107308e-09, w: .997326732}
+      scale: {x: 1, y: .999999702, z: .999999821}
+      transformModified: 1
+    - name: Armature|Shoulder_L
+      position: {x: 5.61230888e-22, y: .57914114, z: -1.1775473e-08}
+      rotation: {x: -.505752921, y: .499001354, z: .599992633, w: .367723405}
+      scale: {x: 1.00000024, y: .999999881, z: .999999642}
+      transformModified: 1
+    - name: Armature|InnerArm_L
+      position: {x: 2.87646937e-08, y: 1.00864804, z: 5.96046412e-08}
+      rotation: {x: .0819127783, y: -.0112169953, z: -.127136469, w: .98843354}
+      scale: {x: .999999642, y: .999999583, z: 1.00000012}
+      transformModified: 1
+    - name: Armature|ForeArm_L
+      position: {x: -8.52651283e-14, y: 1.23084092, z: 1.19209318e-07}
+      rotation: {x: .0774475932, y: -.000798821275, z: .00691151433, w: .996972144}
+      scale: {x: 1.00000024, y: 1.00000012, z: .999999821}
+      transformModified: 1
+    - name: Armature|Hand_L
+      position: {x: 5.67202392e-08, y: 1.55154014, z: 3.42726707e-07}
+      rotation: {x: .0423065163, y: .0135427201, z: .100439444, w: .993951082}
+      scale: {x: .999999702, y: 1.00000012, z: .999999762}
+      transformModified: 1
+    - name: Armature|Fingers_L
+      position: {x: -1.04308128e-07, y: .499821275, z: 1.49011612e-08}
+      rotation: {x: -.275573909, y: .00775024761, z: -.0699637458, w: .958699107}
+      scale: {x: .999999583, y: .999999821, z: .999999881}
+      transformModified: 1
+    - name: Armature|InnerThumb_L
+      position: {x: 5.67202392e-08, y: 1.55154014, z: 3.42726707e-07}
+      rotation: {x: -.0311003979, y: .0335206091, z: .732305527, w: .679439247}
+      scale: {x: 1.00000012, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: Armature|TopThumb_L
+      position: {x: -8.94069672e-08, y: .568583727, z: 2.83122063e-07}
+      rotation: {x: -.22395137, y: .0938563198, z: -.374935806, w: .894684315}
+      scale: {x: .99999994, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: Armature|BottomThumb_L
+      position: {x: 1.1920929e-07, y: .341644347, z: 2.98023224e-08}
+      rotation: {x: -.07505133, y: .0494669154, z: -.16632925, w: .981964886}
+      scale: {x: .999999583, y: .999999642, z: .99999994}
+      transformModified: 1
+    - name: Armature|Shoulder_R
+      position: {x: 5.61230888e-22, y: .57914114, z: -1.1775473e-08}
+      rotation: {x: -.505752921, y: -.499001384, z: -.599992633, w: .367723405}
+      scale: {x: 1.00000024, y: .999999881, z: .999999642}
+      transformModified: 1
+    - name: Armature|InnerArm_R
+      position: {x: -2.87646937e-08, y: 1.00864804, z: 5.96046412e-08}
+      rotation: {x: .0819125548, y: .0112169804, z: .127136528, w: .988433599}
+      scale: {x: .999999642, y: .999999583, z: 1.00000012}
+      transformModified: 1
+    - name: Armature|Forearm_R
+      position: {x: 5.68434189e-14, y: 1.23084092, z: 1.19209318e-07}
+      rotation: {x: .0774480402, y: .000798791472, z: -.00691182725, w: .996972084}
+      scale: {x: 1.00000024, y: 1.00000012, z: .999999821}
+      transformModified: 1
+    - name: Armature|Hand_R
+      position: {x: -5.67202392e-08, y: 1.55154014, z: 3.42726707e-07}
+      rotation: {x: .0423064977, y: -.0135425404, z: -.100439332, w: .993951082}
+      scale: {x: .999999702, y: .99999994, z: .999999762}
+      transformModified: 1
+    - name: Armature|Fingers_R
+      position: {x: 1.04308128e-07, y: .499821275, z: 1.49011612e-08}
+      rotation: {x: -.275573939, y: -.0077503128, z: .0699636564, w: .958699107}
+      scale: {x: .999999464, y: .999999881, z: 1}
+      transformModified: 1
+    - name: Armature|InnerThumb_R
+      position: {x: -5.67202392e-08, y: 1.55154014, z: 3.42726707e-07}
+      rotation: {x: .0311005283, y: .0335205011, z: .732305467, w: -.679439366}
+      scale: {x: 1, y: .999999821, z: .99999994}
+      transformModified: 1
+    - name: Armature|TopThumb_R
+      position: {x: 8.94069672e-08, y: .568583727, z: 2.83122063e-07}
+      rotation: {x: -.223951221, y: -.0938564613, z: .374935806, w: .894684374}
+      scale: {x: .999999881, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: Armature|BottomThumb_R
+      position: {x: -1.1920929e-07, y: .341644347, z: 2.98023224e-08}
+      rotation: {x: -.0750513971, y: -.0494666509, z: .166329145, w: .981964827}
+      scale: {x: .999999523, y: .999999642, z: .999999821}
+      transformModified: 1
+    - name: Armature|Hip_L
+      position: {x: -0, y: .185694724, z: 3.21159983}
+      rotation: {x: .259658068, y: -.657706499, z: .404719889, w: .579829037}
+      scale: {x: 1.00000012, y: 1, z: .999999881}
+      transformModified: 1
+    - name: Armature|LegTop_L
+      position: {x: 4.30877343e-08, y: .802972257, z: -2.38418579e-07}
+      rotation: {x: -.289502531, y: .660498083, z: -.402449667, w: .563883781}
+      scale: {x: .999999881, y: .99999994, z: .999999464}
+      transformModified: 1
+    - name: Armature|LegBottom_L
+      position: {x: -2.94821803e-08, y: 1.21727598, z: 8.52560333e-09}
+      rotation: {x: .226602137, y: .00675944937, z: .0152244847, w: .973844945}
+      scale: {x: 1.00000012, y: .999999702, z: 1.00000024}
+      transformModified: 1
+    - name: Armature|Foot_L
+      position: {x: -5.70435077e-08, y: 1.32395685, z: 3.57977115e-08}
+      rotation: {x: .0889400616, y: -.656934559, z: .744496047, w: .0790718123}
+      scale: {x: .999999583, y: .999999583, z: .999999881}
+      transformModified: 1
+    - name: Armature|Hip_R
+      position: {x: -0, y: .185694724, z: 3.21159983}
+      rotation: {x: .259658068, y: .657706499, z: -.404719889, w: .579829037}
+      scale: {x: 1.00000012, y: 1, z: .999999881}
+      transformModified: 1
+    - name: Armature|LegTop_R
+      position: {x: -4.30877343e-08, y: .802972257, z: -2.38418579e-07}
+      rotation: {x: -.289502531, y: -.660498083, z: .402449667, w: .563883781}
+      scale: {x: .999999881, y: .99999994, z: .999999464}
+      transformModified: 1
+    - name: Armature|LegBottom_R
+      position: {x: 2.94821803e-08, y: 1.21727598, z: 8.52560333e-09}
+      rotation: {x: .226602137, y: -.00675944937, z: -.0152244847, w: .973844945}
+      scale: {x: 1.00000012, y: .999999702, z: 1.00000024}
+      transformModified: 1
+    - name: Armature|Foot_R
+      position: {x: 5.70435077e-08, y: 1.32395685, z: 3.57977115e-08}
+      rotation: {x: -.0889400616, y: -.656934559, z: .744496047, w: -.0790718123}
+      scale: {x: .999999583, y: .999999583, z: .999999881}
+      transformModified: 1
+    - name: Camera
+      position: {x: -7.48113155, y: 5.34366512, z: 6.50763988}
+      rotation: {x: .210611343, y: .905240178, z: -.0892816931, w: -.358066887}
+      scale: {x: 1, y: .999999881, z: 1}
+      transformModified: 1
+    - name: Lamp
+      position: {x: -4.07624531, y: 5.903862, z: -1.00545394}
+      rotation: {x: .169075698, y: -.755880415, z: .272171348, w: .570947528}
+      scale: {x: .999999881, y: .999999762, z: .999999821}
+      transformModified: 1
+    - name: TheMobileCactus
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

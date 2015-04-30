@@ -5,6 +5,7 @@ public class PlayerProjectileAttack : MonoBehaviour
 {
     public void OnCollisionEnter(Collision collision)
     {
-        ActivateHittables.HitAll(collision.gameObject, gameObject.GetComponent<PlayerAttack>());
+        if(collision.gameObject.tag != "Player")
+            ActivateHittables.HitAll(collision.gameObject, gameObject.GetComponent<PlayerAttack>());
     }
 }

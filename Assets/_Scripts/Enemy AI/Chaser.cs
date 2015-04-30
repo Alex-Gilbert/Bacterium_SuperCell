@@ -29,6 +29,10 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
     private EnemySight Sight;
     [SerializeField]
 	public Animator anim;
+
+    bool isActivatingAttack = false;
+
+    AnimatorStateInfo stateInfo;
 	#endregion
 	
 	
@@ -107,6 +111,14 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
                     Reset();
                 GetComponent<Patrol>().Patrolling();
             }
+        }
+
+        stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        if(!isActivatingAttack && stateInfo.IsName("Attack"))
+        {
+            StopCoroutine(ActivatingAttack());
+            StartCoroutine(ActivatingAttack());
         }
 	}
 	
@@ -210,10 +222,20 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 	
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         anim.SetBool("Attack", false);
         Attacking = false;
         Agent.Resume();
+    }
+
+    IEnumerator ActivatingAttack()
+    {
+        isActivatingAttack = true;
+        yield return new WaitForSeconds(.37f);
+        print("Activate Attack");
+        yield return new WaitForSeconds(.33f);
+        print("End Attack");
+        isActivatingAttack = false;
     }
 
 	#endregion

@@ -43,7 +43,7 @@ public class FlyingAI : MonoBehaviour, IHitable, IKillable
 	void Start()
 	{
 		Player = GameObject.FindWithTag("Player");
-        GameObject.Find("Waypoints").GetComponent<WaypointList>().AlexSetWayPoints(out waypoints, numOfWaypoints, 1, transform.position, 15, false);
+        GameObject.Find("Waypoints").GetComponent<WaypointList>().AlexSetWayPoints(out waypoints, numOfWaypoints, transform.position, 15, false);
 		waypointInt = 0;
         Health = 100;
         Attacked = false;

@@ -20,9 +20,14 @@ public class Patrol : MonoBehaviour
     private Transform[] waypoints;
     [SerializeField]
     private int numOfWaypoints = 5;
+    [SerializeField]
+    private int maxDistance = 5;
     private int waypointInt = 0;
     private NavMeshAgent Agent;
-	
+
+    public float MoveSpeed = 3;
+    public float RotateSpeed = .2f;
+
 	#endregion
 	
 	
@@ -38,15 +43,10 @@ public class Patrol : MonoBehaviour
     /// </summary>
     void Start()
     {
-        if(flying)
-        {
-            GameObject.Find("Waypoints").GetComponent<WaypointList>().setWaypoints(out waypoints, numOfWaypoints, 1, transform.position);
-        }
-        else
-        {
-            GameObject.Find("Waypoints").GetComponent<WaypointList>().setWaypoints(out waypoints, numOfWaypoints, 0, transform.position);
+        GameObject.Find("Waypoints").GetComponent<WaypointList>().AlexSetWayPoints(out waypoints, numOfWaypoints, transform.position, maxDistance, !flying);
+        
+        if(!flying)
             Agent = GetComponent<NavMeshAgent>();
-        }
     }
 
     #endregion
@@ -78,19 +78,31 @@ public class Patrol : MonoBehaviour
 
 	public void PatrolAir()
 	{
-        float moveSpeed = 3;
 		if(waypoints.Length == 0)
 			Debug.Log ("No waypoints set!");
 		else
 		{
-			if(transform.position == waypoints[waypointInt].position)
-			{
-				if(waypointInt != (waypoints.Length - 1))
-					waypointInt++;
-				else waypointInt = 0;
-				transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointInt].position, moveSpeed * Time.deltaTime);
-			}
-			transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointInt].position, moveSpeed * Time.deltaTime);
+            float MoveAmount = MoveSpeed * Time.deltaTime;
+
+            if (Vector3.Distance(transform.position, waypoints[waypointInt].position) <= MoveSpeed)
+            {
+                waypointInt = waypointInt == waypoints.Length - 1 ? 0 : waypointInt + 1;
+                print(waypoints[waypointInt].position);
+            }
+
+            Vector3 toLookAt = waypoints[waypointInt].position - transform.position;
+            //toLookAt.y = 0;
+
+            Quaternion lr = Quaternion.LookRotation(toLookAt);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, lr, RotateSpeed * Time.deltaTime);
+
+            //Quaternion referentialShift = Quaternion.FromToRotation(transform.forward, toLookAt);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, transform.rotation * referentialShift, RotateSpeed * Time.deltaTime);
+
+            
+
+            transform.position += transform.forward * MoveAmount;
+            //transform.position += Vector3.up * Mathf.Lerp(0, waypoints[waypointInt].position.y - transform.position.y, MoveAmount * .1f);
 		}
 	}
 	

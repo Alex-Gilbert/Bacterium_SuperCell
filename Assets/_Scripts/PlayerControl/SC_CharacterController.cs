@@ -12,7 +12,7 @@ using System.Collections;
 /// <summary>
 /// #DESCRIPTION OF CLASS#
 /// </summary>
-public class SC_CharacterController : MonoBehaviour
+public class SC_CharacterController : MonoBehaviour, IHitable
 {
     #region Variables (private)
     [SerializeField]
@@ -315,6 +315,7 @@ public class SC_CharacterController : MonoBehaviour
         }
 
         //checkpoint code
+        /*
         distance = Vector3.Distance(checkpoint.transform.position, gameObject.transform.position);
         if ((distance < 50) || (boolCheckpoint==false)){
             checkpoint_vector1 = checkpoint.transform.position;
@@ -326,7 +327,7 @@ public class SC_CharacterController : MonoBehaviour
             //StartCoroutine(Wait());
             //gameObject.transform.LookAt(checkpoint_forward);
             gameObject.transform.position = checkpoint_vector1;
-        }
+        }*/
         if (boolJump == true)
         {
             GetComponent<Rigidbody>().velocity += new Vector3 (0,20,0);
@@ -818,4 +819,16 @@ public class SC_CharacterController : MonoBehaviour
         return toMove.x != 0 || toMove.y != 0 || toMove.z != 0;
     }
     #endregion
+
+    public void Hit(PlayerAttack pa)
+    {
+        animator.SetBool("Damaged", true);
+        Invoke("DeathCheck", .3f);
+    }
+
+    public void DeathCheck()
+    {
+        animator.SetBool("Damaged", false);
+        animator.SetBool("Dead", false);
+    }
 }
