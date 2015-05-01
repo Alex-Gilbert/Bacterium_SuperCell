@@ -977,7 +977,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124506}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -1.04308128e-07}
-  m_LocalPosition: {x: 363.013855, y: -1.07555485, z: 251.751816}
+  m_LocalPosition: {x: 367.390015, y: -1.08000004, z: 241.889999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 416958}
@@ -1192,6 +1192,9 @@ MonoBehaviour:
   left_collide: 0
   right_collide: 0
   back_collide: 0
+  patColor: {r: .957960665, g: .604022443, b: .977941155, a: 1}
+  warnColor: {r: .95588237, g: .913226366, b: .569312274, a: 0}
+  engagedColor: {r: .79411763, g: .332828701, b: .53325069, a: 0}
 --- !u!114 &11422706
 MonoBehaviour:
   m_ObjectHideFlags: 1

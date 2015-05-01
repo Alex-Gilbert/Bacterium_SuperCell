@@ -52,6 +52,8 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     [SerializeField]
     private float jumpMultiplier = 1f;
     [SerializeField]
+    private float ShotLimit = .33f;
+    [SerializeField]
     private CapsuleCollider capCollider;
     [SerializeField]
     private SC_RibLook ribLook;
@@ -516,7 +518,7 @@ public class SC_CharacterController : MonoBehaviour, IHitable
 
         while(targetKeyPressed)
         {
-            if(fireKeyDown)
+            if(fireKeyDown && !isShooting)
             {
                 StopCoroutine("FireLogic");
                 StartCoroutine("FireLogic");
@@ -533,20 +535,12 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     {
         isShooting = true;
 
-        //We will use this if we choose to let the player charge his shots
-        /*
-        while (fireKeyPressed)
-        {
-
-            yield return null;
-        }
-        */
-
         Rigidbody ballInstance;
         ballInstance = ((GameObject)Instantiate(Projectile, FireRangedSpot.position, Quaternion.identity)).GetComponent<Rigidbody>();
 
         ballInstance.velocity = FireRangedSpot.up * 30f;
 
+        yield return new WaitForSeconds(ShotLimit);
         isShooting = false;
         yield return null;
     }

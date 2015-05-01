@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 60e5b1f018e647742b69a9c5cfafc0b9
-timeCreated: 1430303409
+guid: de7538edd9c8a354181b0b384cff5247
+timeCreated: 1430448054
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -274,7 +274,7 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: New Main Character Fixed(Clone)
+    - name: WBC with skin(Clone)
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
