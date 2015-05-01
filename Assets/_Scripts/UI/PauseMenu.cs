@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         {
             if (!Paused)
             {
+                Cursor.visible = true;
                 Paused = true;
                 Time.timeScale = 0f;
                 PauseObject.SetActive(true);
@@ -50,6 +51,7 @@ public class PauseMenu : MonoBehaviour
         PauseObject.SetActive(false);
         Paused = false;
         Time.timeScale = 1f;
+        Cursor.visible = true;
     }
 
     public void MainMenu()

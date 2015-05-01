@@ -47,6 +47,7 @@ public class MainMenu : MonoBehaviour
     public void LoadLevel(int level)
     {
         GameObject.Find("PauseMenu").GetComponent<PauseMenu>().MenuEnabled = true;
+        Cursor.visible = false;
         Application.LoadLevel(level);
     }
 
