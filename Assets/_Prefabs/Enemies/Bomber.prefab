@@ -835,7 +835,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flying: 1
   numOfWaypoints: 4
-  maxDistance: 20
+  maxDistance: 35
   MoveSpeed: 3
   RotateSpeed: 40
 --- !u!114 &11488306
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 9522190}
-  DistanceToThreaten: 8
+  DistanceToThreaten: 18
   AttackSpeed: 15
   TimeToThreaten: 3
   TimeToAttack: .800000012

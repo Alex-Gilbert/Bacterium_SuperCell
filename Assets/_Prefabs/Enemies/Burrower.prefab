@@ -2009,7 +2009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9782d83382a9043b29ca760812ba89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 30
+  Health: 25
 --- !u!114 &11449318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2023,7 +2023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flying: 0
   numOfWaypoints: 5
-  maxDistance: 20
+  maxDistance: 35
   MoveSpeed: 3
   RotateSpeed: .200000003
 --- !u!114 &11472182
@@ -2055,7 +2055,7 @@ MonoBehaviour:
   UnderGroundParticles: {fileID: 100720}
   attackArea: {fileID: 11400626}
   attack: {fileID: 11464110, guid: b37bfc46f30b0954a9dafe23b2d9f19b, type: 2}
-  DistanceToChase: 8
+  DistanceToChase: 20
   model: {fileID: 198910}
   timeToDig: 1.5
   maxTimeToChase: 4

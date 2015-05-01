@@ -15,7 +15,7 @@ using System.Collections;
 public class Chaser : MonoBehaviour, IHitable, IKillable
 {
 	#region Variables (private)
-	private bool engaged = false, warned = false, ResetNeeded = false, playerAttacking = false, dead = false, Attacking = false;
+	private bool engaged = false, warned = false, ResetNeeded = false, playerAttacking = false, dead = false, Attacking = false, dodgeAgain = true;
     private float rotationSpeed = 5f;
     private float LineOfSight;
     [SerializeField]
@@ -100,7 +100,7 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
         {
             if (distance < LineOfSight)
             {
-                if (distance < (LineOfSight / 4) || Sight.Sighted())
+                if (distance < (LineOfSight / 2) || Sight.Sighted())
                 {
                     engaged = true;
                     EngagementTime = minimumEngagementTime + Time.time;
@@ -153,8 +153,8 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 	{
         Quaternion rotation = Quaternion.LookRotation(Player.transform.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-        playerAttacking = Input.GetButtonDown("FireRanged") || Input.GetButtonDown("LightAttack") || Input.GetButtonDown("HeavyAttack");
-        if (playerAttacking)
+        playerAttacking = Input.GetButton("FireRanged") || Input.GetButton("LightAttack") || Input.GetButton("HeavyAttack");
+        if (playerAttacking && dodgeAgain)
             Dodge();
 		ResetNeeded = true;
 		if (warned)
@@ -200,6 +200,8 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 				transform.position = transform.right * -0.5f + transform.position;
             else if(!back_collide)
 				transform.position = transform.forward * -0.5f + transform.position;
+            dodgeAgain = false;
+            StartCoroutine(DodgeTimer());
 		}
 	}
 
@@ -243,6 +245,13 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
         attackArea.EndAttack();
         isActivatingAttack = false;
     }
+
+    IEnumerator DodgeTimer()
+    {
+        yield return new WaitForSeconds(.5f);
+        dodgeAgain = true;
+    }
+
 
 	#endregion
 }

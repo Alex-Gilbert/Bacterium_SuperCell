@@ -17,8 +17,8 @@ public class Shooter : MonoBehaviour, IHitable, IKillable
     #region Variables (private)
     private bool engaged = false, warned = false, ResetNeeded = false, dead = false, Attacking = false;
     private float distance, AttackInterval = 1f, NextAttack;
-    private float warningInterval = 3f, warningTime = -1f;
-    private float minimumEngagementTime = 3f, EngagementTime = 0;
+    private float warningInterval = 1f, warningTime = -1f;
+    private float minimumEngagementTime = 6f, EngagementTime = 0;
     private float rotationSpeed = 5f;
     private float LineOfSight;
     private NavMeshAgent Agent;
@@ -72,7 +72,7 @@ public class Shooter : MonoBehaviour, IHitable, IKillable
         {
             if (distance < LineOfSight)
             {
-                if (distance < (LineOfSight / 4) || Sight.Sighted())
+                if (distance < (LineOfSight / 2) || Sight.Sighted())
                 {
                     engaged = true;
                     EngagementTime = minimumEngagementTime + Time.time;
@@ -121,17 +121,8 @@ public class Shooter : MonoBehaviour, IHitable, IKillable
         {
             ColorMe(engagedColor);
             anim.SetBool("Attack", true);
-            if (distance <= 6)
-            {
-                anim.SetBool("Walk", false);
-                Agent.Stop();
-            }
-            else
-            {
-                anim.SetBool("Walk", true);
-                Agent.Resume();
-                Chase();
-            }
+            anim.SetBool("Walk", true);
+            Chase();
         }
         else
         {
@@ -173,7 +164,17 @@ public class Shooter : MonoBehaviour, IHitable, IKillable
             NextAttack = Time.time + AttackInterval;
             Attack();
         }
-        else Agent.SetDestination(Player.transform.position);
+        else if (distance <= 6)
+        {
+                anim.SetBool("Walk", false);
+                Agent.Stop();
+        }
+        else
+        {
+                anim.SetBool("Walk", true);
+                Agent.SetDestination(Player.transform.position);
+                Agent.Resume();
+        }
     }
 
     void Reset()

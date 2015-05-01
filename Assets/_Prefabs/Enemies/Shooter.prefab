@@ -1219,7 +1219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoV: 110
-  distance: 12
+  distance: 24
 --- !u!114 &11456994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1256,7 +1256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flying: 0
   numOfWaypoints: 5
-  maxDistance: 20
+  maxDistance: 35
   MoveSpeed: 3
   RotateSpeed: .200000003
 --- !u!136 &13602460
