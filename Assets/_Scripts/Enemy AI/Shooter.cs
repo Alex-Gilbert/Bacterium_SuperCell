@@ -39,6 +39,8 @@ public class Shooter : MonoBehaviour, IHitable, IKillable
     [HideInInspector]
     public bool left_collide = false, right_collide = false, back_collide = false;
 
+    Color patColor = new Color(248, 124, 255);
+
     #endregion
 
 
@@ -52,7 +54,7 @@ public class Shooter : MonoBehaviour, IHitable, IKillable
         Agent = GetComponent<NavMeshAgent>();
         Player = GameObject.FindWithTag("Player");
         NextAttack = 0;
-        ColorMe(Color.white);
+        ColorMe(Color.cyan);
         LineOfSight = GetComponent<EnemySight>().distance;
         anim.SetBool("Walk", true);
     }
@@ -180,7 +182,7 @@ public class Shooter : MonoBehaviour, IHitable, IKillable
         warningTime = -1;
         ResetNeeded = false;
         Agent.Resume();
-        ColorMe(Color.white);
+        ColorMe(Color.cyan);
     }
 
     public void Kill()
@@ -201,7 +203,7 @@ public class Shooter : MonoBehaviour, IHitable, IKillable
         Renderer[] child = GetComponentsInChildren<Renderer>();
         for (int i = 0; i < child.Length; i++)
         {
-            child[i].material.color = col;
+            child[i].material.SetColor("_EmissionColor", col);
         }
     }
     #endregion

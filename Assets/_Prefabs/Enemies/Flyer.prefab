@@ -108,23 +108,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &148332
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 455850}
-  - 33: {fileID: 3399736}
-  - 135: {fileID: 13574978}
-  m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &154326
 GameObject:
   m_ObjectHideFlags: 1
@@ -211,6 +194,12 @@ GameObject:
   - 4: {fileID: 492426}
   - 114: {fileID: 11463310}
   - 114: {fileID: 11483440}
+  - 135: {fileID: 13590352}
+  - 54: {fileID: 5443752}
+  - 82: {fileID: 8269274}
+  - 114: {fileID: 11477076}
+  - 114: {fileID: 11472560}
+  - 114: {fileID: 11418700}
   m_Layer: 0
   m_Name: Flyer
   m_TagString: Untagged
@@ -424,18 +413,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 405564}
   m_RootOrder: 0
---- !u!4 &455850
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148332}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 492426}
-  m_RootOrder: 0
 --- !u!4 &461874
 Transform:
   m_ObjectHideFlags: 1
@@ -515,7 +492,7 @@ Transform:
   - {fileID: 405504}
   - {fileID: 443192}
   m_Father: {fileID: 492426}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!4 &477240
 Transform:
   m_ObjectHideFlags: 1
@@ -561,10 +538,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 373.019989, y: 5.67999983, z: 240.520004}
+  m_LocalPosition: {x: 372.019989, y: 6.17999983, z: 238.419998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 455850}
   - {fileID: 472562}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -575,13 +551,90 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100790}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &3399736
-MeshFilter:
+--- !u!54 &5443752
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148332}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_GameObject: {fileID: 180872}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!82 &8269274
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180872}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9508816
 Animator:
   serializedVersion: 3
@@ -599,6 +652,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11418700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9782d83382a9043b29ca760812ba89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 50
 --- !u!114 &11463310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -627,6 +692,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackActive: {fileID: 0}
+--- !u!114 &11472560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecefc5a19facfa4da07d6bf0c751538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11477076
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2beeeff22649442acb7b34fb21b706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 1854c426de2d032428606ce4f680ae92, type: 3}
 --- !u!114 &11483440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -638,18 +726,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0fb2d9f350a1d4cb05213dd21a285d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 9508816}
   DistanceToThreaten: 8
   AttackSpeed: 15
   TimeToThreaten: 3
   TimeToAttack: .800000012
   diveAttack: {fileID: 11464110, guid: cb556761baeee7145866ee49ab769b9e, type: 2}
   attackArea: {fileID: 11468976}
---- !u!135 &13574978
+--- !u!135 &13590352
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 148332}
+  m_GameObject: {fileID: 180872}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1

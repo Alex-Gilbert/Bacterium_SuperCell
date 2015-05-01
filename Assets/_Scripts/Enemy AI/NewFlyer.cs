@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewFlyer : MonoBehaviour
+public class NewFlyer : MonoBehaviour, IKillable
 {
     private enum FlyerState
     {
         Patrol,
         Threaten,
         Attack,
+        Die
     }
 
     private Patrol patrol;
@@ -15,6 +16,9 @@ public class NewFlyer : MonoBehaviour
     private FlyerState curState;
 
     private Transform player;
+
+    [SerializeField]
+    private Animator anim;
 
     [SerializeField]
     private float DistanceToThreaten = 8f;
@@ -27,6 +31,7 @@ public class NewFlyer : MonoBehaviour
 
     [SerializeField]
     private float TimeToAttack = 3;
+
 
 
     [SerializeField]
@@ -75,6 +80,8 @@ public class NewFlyer : MonoBehaviour
                     StartCoroutine(Attack());
                 }
                 break;
+            case FlyerState.Die:
+                break;
         }
     }
 
@@ -84,7 +91,7 @@ public class NewFlyer : MonoBehaviour
         isThreatening = true;
         float timeTaken = 0;
 
-        while (timeTaken < TimeToThreaten)
+        while (timeTaken < TimeToThreaten && curState != FlyerState.Die)
         {
             timeTaken += Time.deltaTime;
 
@@ -100,7 +107,7 @@ public class NewFlyer : MonoBehaviour
 
 
         isThreatening = false;
-        curState = FlyerState.Attack;
+        curState = curState == FlyerState.Die ? FlyerState.Die : FlyerState.Attack;
         yield return null;
     }
 
@@ -112,7 +119,7 @@ public class NewFlyer : MonoBehaviour
         attackArea.ActivateAttack(diveAttack);
         transform.LookAt(player);
 
-        while (timeTaken < TimeToAttack)
+        while (timeTaken < TimeToAttack && curState != FlyerState.Die)
         {
             timeTaken += Time.deltaTime;
 
@@ -125,7 +132,7 @@ public class NewFlyer : MonoBehaviour
 
         timeTaken = 0;
 
-        while (timeTaken < TimeToAttack * 2)
+        while (timeTaken < TimeToAttack * 2 && curState != FlyerState.Die)
         {
             timeTaken += Time.deltaTime;
 
@@ -137,7 +144,23 @@ public class NewFlyer : MonoBehaviour
         transform.rotation = init;
 
         isAttacking = false;
-        curState = FlyerState.Patrol;
+        curState = curState == FlyerState.Die ? FlyerState.Die : FlyerState.Patrol;
         yield return null;
+    }
+
+    public void Kill()
+    {
+        StopCoroutine(Attack());
+        StopCoroutine(Threat());
+
+        attackArea.EndAttack();
+
+        anim.SetBool("Death", true);
+        curState = FlyerState.Die;
+
+        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+
+        Destroy(gameObject, 2);
     }
 }

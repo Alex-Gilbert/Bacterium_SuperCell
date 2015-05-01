@@ -103,6 +103,7 @@ public class NewBurrower : MonoBehaviour, IKillable
                         patrol.Patrolling();
                     }
                 }
+
                 break;
             case BurrowerState.Chase:
                 if(!isChasing)
@@ -120,7 +121,7 @@ public class NewBurrower : MonoBehaviour, IKillable
     IEnumerator Chasing()
     {
         isChasing = true;
-        if(!isUnderGround)
+        if(!isUnderGround && !isDigging)
         {
             StopCoroutine(Dig());
             StartCoroutine(Dig());
@@ -175,23 +176,28 @@ public class NewBurrower : MonoBehaviour, IKillable
 
     IEnumerator Dig()
     {
+        model.SetActive(true);
+        anim.SetBool("Dig", true);
         isDigging = true;
-        curState = BurrowerState.Dead;
         isUnderGround = true;
         agent.Stop();
-        float curTime = 0;
 
         foreach (ParticleSystem ps in underGroundParticles)
             ps.Play();
-        foreach (ParticleSystem ps in diggingParticles)
-            ps.Play();
-
-        if(!isDieing)
-            model.SetActive(false);
-        capCollider.enabled = false;
+        
 
         yield return new WaitForSeconds(timeToDig);
-        
+
+        if (!isDieing)
+        {
+            model.SetActive(false);
+            foreach (ParticleSystem ps in diggingParticles)
+                ps.Play();
+        }
+
+        capCollider.enabled = false;
+
+        anim.SetBool("Dig", false);
         isDigging = false;
         agent.Resume();
         yield return null;
@@ -206,6 +212,8 @@ public class NewBurrower : MonoBehaviour, IKillable
     {
         if(!isDieing)
         {
+            curState = BurrowerState.Dead;
+
             StopCoroutine(Chasing());
             StopCoroutine(Dig());
 

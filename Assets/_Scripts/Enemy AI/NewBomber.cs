@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBomber : MonoBehaviour 
+public class NewBomber : MonoBehaviour, IKillable
 {
     private enum BomberState
     {
         Patrol,
         Threaten,
         Attack,
+        Die
     }
 
     private Patrol patrol;
@@ -15,6 +16,9 @@ public class NewBomber : MonoBehaviour
     private BomberState curState;
 
     private Transform player;
+
+    [SerializeField]
+    private Animator anim;
 
     [SerializeField]
     private float DistanceToThreaten = 8f;
@@ -88,7 +92,7 @@ public class NewBomber : MonoBehaviour
         isThreatening = true;
         float timeTaken = 0;
 
-        while (timeTaken < TimeToThreaten)
+        while (timeTaken < TimeToThreaten && curState != BomberState.Die)
         {
             timeTaken += Time.deltaTime;
 
@@ -103,7 +107,7 @@ public class NewBomber : MonoBehaviour
         }
 
         isThreatening = false;
-        curState = BomberState.Attack;
+        curState = curState == BomberState.Die ? BomberState.Die : BomberState.Attack;
         yield return null;
     }
 
@@ -117,7 +121,7 @@ public class NewBomber : MonoBehaviour
 
         attackArea.ActivateAttack(oozeAttack);
 
-        while (timeTaken < TimeToAttack)
+        while (timeTaken < TimeToAttack && curState != BomberState.Die)
         {
             timeTaken += Time.deltaTime;
 
@@ -129,7 +133,23 @@ public class NewBomber : MonoBehaviour
         attackArea.EndAttack();
 
         isAttacking = false;
-        curState = BomberState.Patrol;
+        curState = curState == BomberState.Die ? BomberState.Die : BomberState.Patrol;
         yield return null;
+    }
+
+    public void Kill()
+    {
+        StopCoroutine(Attack());
+        StopCoroutine(Threat());
+
+        attackArea.EndAttack();
+
+        anim.SetBool("Death", true);
+        curState = BomberState.Die;
+
+        GetComponent<Rigidbody>().useGravity = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+
+        Destroy(gameObject, 2);
     }
 }

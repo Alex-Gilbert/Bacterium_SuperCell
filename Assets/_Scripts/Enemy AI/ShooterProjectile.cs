@@ -3,6 +3,11 @@ using System.Collections;
 
 public class ShooterProjectile : MonoBehaviour 
 {
+    public void Start()
+    {
+        Destroy(gameObject, 5);
+    }
+
 
     public void OnCollisionEnter(Collision collision)
     {

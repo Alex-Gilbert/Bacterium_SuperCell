@@ -412,6 +412,10 @@ GameObject:
   - 195: {fileID: 19500934}
   - 114: {fileID: 11449318}
   - 114: {fileID: 11478970}
+  - 82: {fileID: 8290260}
+  - 114: {fileID: 11498394}
+  - 114: {fileID: 11413848}
+  - 114: {fileID: 11472182}
   m_Layer: 0
   m_Name: Burrower
   m_TagString: Untagged
@@ -966,7 +970,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 168308}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -5.8114523e-07}
-  m_LocalPosition: {x: 362.531799, y: -1.15029144, z: 248.447159}
+  m_LocalPosition: {x: 364.268799, y: -.78019762, z: 241.108185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414554}
@@ -1184,6 +1188,75 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!82 &8290260
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168308}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9513170
 Animator:
   serializedVersion: 3
@@ -1225,6 +1298,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerAbove: 0
+--- !u!114 &11413848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc9782d83382a9043b29ca760812ba89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 30
 --- !u!114 &11449318
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1241,6 +1326,17 @@ MonoBehaviour:
   maxDistance: 20
   MoveSpeed: 3
   RotateSpeed: .200000003
+--- !u!114 &11472182
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecefc5a19facfa4da07d6bf0c751538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11478970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1261,8 +1357,20 @@ MonoBehaviour:
   attack: {fileID: 11464110, guid: b37bfc46f30b0954a9dafe23b2d9f19b, type: 2}
   DistanceToChase: 8
   model: {fileID: 183184}
-  timeToDig: 1
+  timeToDig: 1.5
   maxTimeToChase: 4
+--- !u!114 &11498394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 168308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea2beeeff22649442acb7b34fb21b706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 1854c426de2d032428606ce4f680ae92, type: 3}
 --- !u!136 &13606516
 CapsuleCollider:
   m_ObjectHideFlags: 1

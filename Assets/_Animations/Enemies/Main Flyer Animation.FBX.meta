@@ -47,6 +47,7 @@ ModelImporter:
     4300002: Flyer Complete
     4300004: flying plane
     7400000: Take 001
+    7400002: Dead
     9500000: //RootNode
     13700000: Flyer Complete
   materials:
@@ -76,6 +77,66 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bn_hip
+        weight: 1
+      - path: bn_hip/bn_spine_01
+        weight: 1
+      - path: bn_hip/bn_spine_01/bn_spine_02
+        weight: 1
+      - path: bn_hip/bn_spine_01/bn_spine_02/bn_spine_03
+        weight: 1
+      - path: bn_hip/bn_spine_01/bn_spine_02/bn_spine_03/bn_spine_04
+        weight: 1
+      - path: bn_hip/bn_wing_L_1
+        weight: 1
+      - path: bn_hip/bn_wing_L_1/bn_wing_L_2
+        weight: 1
+      - path: bn_hip/bn_wing_L_1/bn_wing_L_2/bn_wing_L_3
+        weight: 1
+      - path: bn_hip/bn_wing_L_1/bn_wing_L_2/bn_wing_L_3/bn_wing_L_4
+        weight: 1
+      - path: bn_hip/bn_wing_R_1
+        weight: 1
+      - path: bn_hip/bn_wing_R_1/bn_wing_R_2
+        weight: 1
+      - path: bn_hip/bn_wing_R_1/bn_wing_R_2/bn_wing_R_3
+        weight: 1
+      - path: bn_hip/bn_wing_R_1/bn_wing_R_2/bn_wing_R_3/bn_wing_R_4
+        weight: 1
+      - path: Box001
+        weight: 1
+      - path: Flyer Complete
+        weight: 1
+      - path: flying plane
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Dead
+      takeName: Take 001
+      firstFrame: 27
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

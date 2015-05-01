@@ -841,6 +841,8 @@ public class SC_CharacterController : MonoBehaviour, IHitable
 
         animator.SetBool("Damaged", false);
 
+        float timeTowait = pa.AttackType == PlayerAttackType.Heavy ? .25f : .0f;
+
         yield return new WaitForSeconds(stateInfo.length);
 
         isDamaged = false;
