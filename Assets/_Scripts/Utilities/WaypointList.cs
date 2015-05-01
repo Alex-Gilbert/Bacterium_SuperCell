@@ -37,7 +37,9 @@ public class WaypointList : MonoBehaviour
 	void Awake()
 	{
         waypointsListGround = GroundWaypoints.GetComponentsInChildren<Transform>();
+        waypointsListGround = withoutParent(ref waypointsListGround);
         waypointsListFlying = Airwaypoints.GetComponentsInChildren<Transform>();
+        waypointsListFlying = withoutParent(ref waypointsListFlying);
 	}
 	
 	/// <summary>
@@ -139,6 +141,14 @@ public class WaypointList : MonoBehaviour
         {
             waypoints[i] = proposedArray[i];
         }
+    }
+
+    private Transform[] withoutParent(ref Transform[] input)
+    {
+        Transform[] temp = new Transform[input.Length-1];
+        for(int i = 1; i < input.Length; i++)
+            temp[i-1] = input[i];
+        return temp;
     }
 
 	#endregion

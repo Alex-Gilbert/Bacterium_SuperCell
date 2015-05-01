@@ -54,7 +54,7 @@ public class Follow_Head : MonoBehaviour, IHitable, IKillable
         Player = GameObject.FindWithTag("Player");
         NextAttack = 0;
         ColorMe(Color.white);
-        GameObject.Find("Waypoints").GetComponent<WaypointList>().setWaypoints(out waypoints, numOfWaypoints, 1, transform.position);
+        waypoints = GameObject.Find("Ebola Waypoints").GetComponent<WaypointList>().waypointsListFlying;
         Initialize();
     }
 
