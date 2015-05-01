@@ -948,6 +948,17 @@ public class SC_CharacterController : MonoBehaviour, IHitable
         }
     }
 
+    public bool HealUP()
+    {
+        if (Health < 9)
+        {
+            Health = Mathf.Clamp(Health + 3, Health + 3, 9);
+            SetHealth(Health);
+            return true;
+        }
+        return false;
+    }
+
     void GotoCheckPoint()
     {
         Health = 9;
