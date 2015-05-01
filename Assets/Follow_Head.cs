@@ -53,7 +53,6 @@ public class Follow_Head : MonoBehaviour, IHitable, IKillable
     {
         Player = GameObject.FindWithTag("Player");
         NextAttack = 0;
-        ColorMe(Color.white);
         waypoints = GameObject.Find("Ebola Waypoints").GetComponent<WaypointList>().waypointsListFlying;
         Initialize();
     }
@@ -106,14 +105,12 @@ public class Follow_Head : MonoBehaviour, IHitable, IKillable
         ResetNeeded = true;
         if (warned)
         {
-            ColorMe(Color.red);
             Attack();
         }
         else
         {
             if (warningTime == -1)
             {
-                ColorMe(Color.yellow);
                 warningTime = Time.time + warningInterval;
             }
             else if (warningTime < Time.time)
@@ -155,7 +152,6 @@ public class Follow_Head : MonoBehaviour, IHitable, IKillable
         NextAttack = 0;
         AttackInterval = Random.Range(1, 5);
         ResetNeeded = false;
-        ColorMe(Color.white);
     }
 
 
@@ -179,6 +175,7 @@ public class Follow_Head : MonoBehaviour, IHitable, IKillable
         //Head.LookAt(position);
         Quaternion rotation = Quaternion.LookRotation(target - Head.position);
         Head.rotation = Quaternion.Slerp(Head.rotation, rotation, rotationSpeed * Time.deltaTime);
+        //Head.position += Head.forward * step;
         position = Head.position;
         last = Head;
         foreach (Transform t in Parts)
@@ -189,14 +186,6 @@ public class Follow_Head : MonoBehaviour, IHitable, IKillable
             t.LookAt(last);
              last = t;
          }
-    }
-    void ColorMe(Color col)
-    {
-        Renderer[] child = GetComponentsInChildren<Renderer>();
-        for (int i = 0; i < child.Length; i++)
-        {
-            child[i].material.color = col;
-        }
     }
 
     public void Kill()

@@ -16,7 +16,7 @@ public class Shooter : MonoBehaviour, IHitable, IKillable
 {
     #region Variables (private)
     private bool engaged = false, warned = false, ResetNeeded = false, dead = false, Attacking = false;
-    private float distance, AttackInterval = 1f, NextAttack;
+    private float distance, AttackInterval = 1.5f, NextAttack;
     private float warningInterval = 1f, warningTime = -1f;
     private float minimumEngagementTime = 6f, EngagementTime = 0;
     private float rotationSpeed = 5f;
@@ -190,6 +190,7 @@ public class Shooter : MonoBehaviour, IHitable, IKillable
 
     public void Kill()
     {
+        Player.GetComponent<SC_CharacterController>().ScoreUp(100);
         anim.SetBool("Death", true);
         dead = true;
         Agent.Stop();

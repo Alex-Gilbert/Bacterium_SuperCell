@@ -8,6 +8,7 @@
 
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 /// <summary>
 /// #DESCRIPTION OF CLASS#
@@ -115,6 +116,16 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     [SerializeField]
     NucleusHealth Health3;
 
+    [SerializeField]
+    Text AmmoText;
+
+    [SerializeField]
+    Text ScoreText;
+
+    public float Ammo;
+
+    public float Score;
+
     //private global only
     private AnimatorStateInfo stateInfo;
     private AnimatorTransitionInfo transInfo;
@@ -171,6 +182,10 @@ public class SC_CharacterController : MonoBehaviour, IHitable
 
     [SerializeField]
     private CheckPoint checkPoint;
+    [SerializeField]
+    private CheckPoint cheaterCheckPoint;
+
+    private bool Invincible = false;
 
     #endregion
 
@@ -225,7 +240,7 @@ public class SC_CharacterController : MonoBehaviour, IHitable
             hasDoubleJumped = false;
         }
 
-        if (!isDamaged)
+        if (!isDamaged && !animator.GetBool("Dead"))
         {
             if (targetKeyDown)
             {
@@ -333,7 +348,7 @@ public class SC_CharacterController : MonoBehaviour, IHitable
 
     public void FixedUpdate()
     {
-        if (!isDamaged)
+        if (!isDamaged && !animator.GetBool("Dead"))
         {
             if (gamecam.CamState != SC_ThirdPersonCamera.CamStates.FirstPerson)
             {
@@ -408,7 +423,7 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     #region Methods
     public void SetCheckPoint(CheckPoint cp)
     {
-        if(checkPoint != null)
+        if(checkPoint != null && cp != checkPoint)
         {
             checkPoint.TurnOff();
         }
@@ -543,7 +558,7 @@ public class SC_CharacterController : MonoBehaviour, IHitable
 
         while(targetKeyPressed)
         {
-            if(fireKeyDown && !isShooting)
+            if(fireKeyDown && !isShooting && Ammo > 0)
             {
                 StopCoroutine("FireLogic");
                 StartCoroutine("FireLogic");
@@ -564,6 +579,8 @@ public class SC_CharacterController : MonoBehaviour, IHitable
         ballInstance = ((GameObject)Instantiate(Projectile, FireRangedSpot.position, Quaternion.identity)).GetComponent<Rigidbody>();
 
         ballInstance.velocity = FireRangedSpot.up * 30f;
+
+        AmmoUp(-1);
 
         yield return new WaitForSeconds(ShotLimit);
         isShooting = false;
@@ -807,6 +824,12 @@ public class SC_CharacterController : MonoBehaviour, IHitable
         targetKeyDown = !targetKeyPressed && TargetisNowPressed;
         targetKeyUp = targetKeyPressed && !TargetisNowPressed;
         targetKeyPressed = TargetisNowPressed;
+
+        if (Input.GetKeyDown(KeyCode.I))
+            Invincible = !Invincible;
+
+        if (Input.GetKeyDown(KeyCode.O))
+            SetCheckPoint(cheaterCheckPoint);
     }
 
     private void CheckAirState()
@@ -835,7 +858,7 @@ public class SC_CharacterController : MonoBehaviour, IHitable
 
     public void Hit(PlayerAttack pa)
     {
-        if (!isDamaged && (!isBlocking || isDrowning) && !animator.GetBool("Dead"))
+        if (!isDamaged && (!isBlocking || isDrowning) && !animator.GetBool("Dead") && !Invincible)
         {
             StartCoroutine(Damaged(pa));
         }
@@ -959,8 +982,24 @@ public class SC_CharacterController : MonoBehaviour, IHitable
         return false;
     }
 
+    public void AmmoUp(float MoreAmmo)
+    {
+        Ammo += MoreAmmo;
+
+        AmmoText.text = "Ammo: " + Ammo;
+    }
+
+    public void ScoreUp(float MoreScore)
+    {
+        Score += MoreScore;
+
+        ScoreText.text = "Score: " + Score;
+    }
+
     void GotoCheckPoint()
     {
+        ScoreUp(-500);
+
         Health = 9;
         SetHealth(9);
 

@@ -91,8 +91,6 @@ public class Patrol : MonoBehaviour
             }
 
             Vector3 toLookAt = waypoints[waypointInt].position - transform.position;
-            //toLookAt.y = 0;
-
             Quaternion lr = Quaternion.LookRotation(toLookAt);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, lr, RotateSpeed * Time.deltaTime);
 

@@ -150,6 +150,8 @@ public class NewBomber : MonoBehaviour, IKillable
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().isKinematic = false;
 
+        player.gameObject.GetComponent<SC_CharacterController>().ScoreUp(100);
+
         Destroy(gameObject, 2);
     }
 }

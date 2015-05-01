@@ -208,6 +208,7 @@ public class Chaser : MonoBehaviour, IHitable, IKillable
 	public void Kill()
 	{
         anim.SetBool("Death", true);
+        Player.GetComponent<SC_CharacterController>().ScoreUp(100);
         dead = true;
         Agent.Stop();
 		Destroy(gameObject, 2f);

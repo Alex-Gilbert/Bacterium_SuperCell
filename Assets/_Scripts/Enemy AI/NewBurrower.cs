@@ -148,7 +148,8 @@ public class NewBurrower : MonoBehaviour, IKillable
             ps.Play();
 
         model.SetActive(true);
-        attackArea.ActivateAttack(attack);
+        if(curState!= BurrowerState.Dead)
+            attackArea.ActivateAttack(attack);
         anim.SetBool("Attack", true);
         
         GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -212,6 +213,8 @@ public class NewBurrower : MonoBehaviour, IKillable
     {
         if(!isDieing)
         {
+            player.gameObject.GetComponent<SC_CharacterController>().ScoreUp(100);
+
             curState = BurrowerState.Dead;
 
             StopCoroutine(Chasing());
