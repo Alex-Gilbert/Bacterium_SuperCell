@@ -5,7 +5,8 @@ public enum PlayerAttackType
 {
     Melee,
     Ranged,
-    Heavy
+    Heavy,
+    Dive
 }
 
 public class PlayerAttack : MonoBehaviour

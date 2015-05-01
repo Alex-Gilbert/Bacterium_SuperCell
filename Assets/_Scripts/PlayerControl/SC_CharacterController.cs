@@ -108,6 +108,13 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     [SerializeField]
     AudioClip DiveImpact;
 
+    [SerializeField]
+    NucleusHealth Health1;
+    [SerializeField]
+    NucleusHealth Health2;
+    [SerializeField]
+    NucleusHealth Health3;
+
     //private global only
     private AnimatorStateInfo stateInfo;
     private AnimatorTransitionInfo transInfo;
@@ -125,6 +132,7 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     private bool isAttacking = false;
     private bool isDiveAttack = false;
     private bool isBlocking = false;
+    private bool isDrowning = false;
     private AudioSource audio;
 
     //Input
@@ -159,16 +167,11 @@ public class SC_CharacterController : MonoBehaviour, IHitable
 
     bool isDamaged = false;
 
-    //checkpoint + point system
-    private float distance; //used for the checkpoint system
-    private Vector3 checkpoint_forward;
-    private bool boolWait = false;
-    private bool boolCheckpoint = false;
-    public GameObject checkpoint;
-    private Vector3 checkpoint_vector1;
-    public int point_count = 0;
-    private Vector3 vPosition;
     private bool boolJump = false;
+
+    [SerializeField]
+    private CheckPoint checkPoint;
+
     #endregion
 
 
@@ -178,7 +181,7 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     public float Speed { get { return speed; } }
     public float LocomotionThreshold { get { return 0.2f; } }
     public bool IsTargeting { get { return isTargeting; } }
-    public int Health;
+    public int Health = 9;
 
     #endregion
 
@@ -211,11 +214,6 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     /// </summary>	
     void Update()
     {
-        if (boolWait == true)
-        {
-            return;
-        }
-
         stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         transInfo = animator.GetAnimatorTransitionInfo(0);
 
@@ -324,6 +322,12 @@ public class SC_CharacterController : MonoBehaviour, IHitable
                 GetComponent<Rigidbody>().velocity += new Vector3(0, 20, 0);
                 boolJump = false;
             }
+
+            if(!isDrowning && transform.position.y < -3f)
+            {
+                StopCoroutine(Drowning());
+                StartCoroutine(Drowning());
+            }
         }
     }
 
@@ -402,12 +406,16 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     
 
     #region Methods
-    IEnumerator Wait()
+    public void SetCheckPoint(CheckPoint cp)
     {
-        boolWait = true;
-        yield return new WaitForSeconds(1);
-        boolWait = false;
+        if(checkPoint != null)
+        {
+            checkPoint.TurnOff();
+        }
+
+        checkPoint = cp;
     }
+
     private void MoveLogic()
     {
         if (Mathf.Abs(charAngle) < 135)
@@ -486,6 +494,23 @@ public class SC_CharacterController : MonoBehaviour, IHitable
             Quaternion deltaRotation = Quaternion.Euler(rotationAmount * Time.deltaTime * directionSpeed * .25f);
             this.transform.rotation = (this.transform.rotation * deltaRotation);
         }
+    }
+
+    IEnumerator Drowning()
+    {
+        isDrowning = true;
+
+        while(transform.position.y < -3)
+        {
+            yield return new WaitForSeconds(.75f);
+
+            if (transform.position.y < -3)
+            {
+                Hit(lightAttack1);
+            }
+        }
+
+        isDrowning = false;
     }
 
     private IEnumerator JumpLogic()
@@ -810,14 +835,8 @@ public class SC_CharacterController : MonoBehaviour, IHitable
 
     public void Hit(PlayerAttack pa)
     {
-        if (!isDamaged)
+        if (!isDamaged && (!isBlocking || isDrowning) && !animator.GetBool("Dead"))
         {
-            animator.SetBool("Damaged", true);
-            if (pa.AttackType == PlayerAttackType.Heavy)
-                animator.SetFloat("DamageType", 1);
-            else
-                animator.SetFloat("DamageType", 0);
-
             StartCoroutine(Damaged(pa));
         }
         
@@ -827,7 +846,24 @@ public class SC_CharacterController : MonoBehaviour, IHitable
     {
         isDamaged = true;
 
-        if (pa.AttackType == PlayerAttackType.Heavy)
+        if (pa == lightAttack1)
+            Health -= 3;
+        else if (pa.AttackType == PlayerAttackType.Heavy)
+            Health -= 2;
+        else
+            Health -= 1;
+
+        animator.SetBool("Damaged", true);
+        if (pa.AttackType == PlayerAttackType.Heavy || Health<0)
+            animator.SetFloat("DamageType", 1);
+        else
+            animator.SetFloat("DamageType", 0);
+
+        animator.SetBool("GetUp", false);
+
+        SetHealth(Health);
+
+        if (pa.AttackType == PlayerAttackType.Heavy || Health < 0)
             GetComponent<Rigidbody>().AddForce(pa.Forward * 1000f, ForceMode.Impulse);
 
         while (!stateInfo.IsName("Damaged"))
@@ -835,12 +871,94 @@ public class SC_CharacterController : MonoBehaviour, IHitable
 
         animator.SetBool("Damaged", false);
 
-        float timeTowait = pa.AttackType == PlayerAttackType.Heavy ? .25f : .0f;
+        float timeTowait = pa.AttackType == PlayerAttackType.Heavy || Health < 0 ? stateInfo.length : .25f;
 
-        yield return new WaitForSeconds(stateInfo.length);
+        if (Health > 0)
+        {
+            animator.SetBool("Dead", false);
+            animator.SetBool("GetUp", false);
+        }
+        else
+        {
+            animator.SetBool("GetUp", false);
+            animator.SetBool("Dead", true);
+            Invoke("GotoCheckPoint", 2);
+        }
+
+        yield return new WaitForSeconds(timeTowait);
 
         isDamaged = false;
-        animator.SetBool("Dead", false);
     }
 
+    void SetHealth(int health)
+    {
+        switch(health)
+        {
+            case 0:
+                Health1.SetHealth(0);
+                Health2.SetHealth(0);
+                Health3.SetHealth(0);
+                break;
+            case 1:
+                Health1.SetHealth(1);
+                Health2.SetHealth(0);
+                Health3.SetHealth(0);
+                break;
+            case 2:
+                Health1.SetHealth(2);
+                Health2.SetHealth(0);
+                Health3.SetHealth(0);
+                break;
+            case 3:
+                Health1.SetHealth(3);
+                Health2.SetHealth(0);
+                Health3.SetHealth(0);
+                break;
+            case 4:
+                Health1.SetHealth(3);
+                Health2.SetHealth(1);
+                Health3.SetHealth(0);
+                break;
+            case 5:
+                Health1.SetHealth(3);
+                Health2.SetHealth(2);
+                Health3.SetHealth(0);
+                break;
+            case 6:
+                Health1.SetHealth(3);
+                Health2.SetHealth(3);
+                Health3.SetHealth(0);
+                break;
+            case 7:
+                Health1.SetHealth(3);
+                Health2.SetHealth(3);
+                Health3.SetHealth(1);
+                break;
+            case 8:
+                Health1.SetHealth(3);
+                Health2.SetHealth(3);
+                Health3.SetHealth(2);
+                break;
+            case 9:
+                Health1.SetHealth(3);
+                Health2.SetHealth(3);
+                Health3.SetHealth(3);
+                break;
+
+        }
+    }
+
+    void GotoCheckPoint()
+    {
+        Health = 9;
+        SetHealth(9);
+
+        isDrowning = false;
+
+        Vector3 checkPointPosition = checkPoint.transform.position + Vector3.up * 8f;
+        transform.position = checkPointPosition;
+
+        animator.SetBool("Dead", false);
+        animator.SetBool("GetUp", true);
+    }
 }

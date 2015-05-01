@@ -11,8 +11,9 @@ GameObject:
   - 33: {fileID: 3318332}
   - 23: {fileID: 2308718}
   - 95: {fileID: 9588562}
+  - 114: {fileID: 11417440}
   m_Layer: 0
-  m_Name: Nucleus
+  m_Name: HealthNucleus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,9 +25,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175752}
-  m_LocalRotation: {x: -.707106888, y: 0, z: 0, w: .70710665}
-  m_LocalPosition: {x: 376.510986, y: 1.40100002, z: 240.427002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: .702942312, y: -.0474211499, z: -.703496397, w: -.093360655}
+  m_LocalPosition: {x: -.374000013, y: .296000004, z: -.00999999978}
+  m_LocalScale: {x: .321661472, y: .322637439, z: .321393013}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,6 +79,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11417440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55757b23d25da8642a52e2edc505ac97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 1
+  amplitude: 1
+  baseMult: 1
+  FullColor: {r: 1, g: 0, b: 0, a: 0}
+  MidColor: {r: .617799044, g: 0, b: .683823526, a: 0}
+  LowColor: {r: .0725659057, g: 0, b: .198529422, a: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
